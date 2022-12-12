@@ -1,0 +1,10 @@
+D:\college\111-2\project\code\scheduling\scheduling\bin\Debug\scheduling.exe.config
+D:\college\111-2\project\code\scheduling\scheduling\bin\Debug\scheduling.exe
+D:\college\111-2\project\code\scheduling\scheduling\bin\Debug\scheduling.pdb
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.csprojAssemblyReference.cache
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.Form1.resources
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.Properties.Resources.resources
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.csproj.GenerateResource.cache
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.csproj.CoreCompileInputs.cache
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.exe
+D:\college\111-2\project\code\scheduling\scheduling\obj\Debug\scheduling.pdb
