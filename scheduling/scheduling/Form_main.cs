@@ -150,7 +150,8 @@ namespace scheduling
 
         private void button_method_Click(object sender, EventArgs e)
         {
-
+            Form_method manage_method = new Form_method();
+            manage_method.Show();
         }
     }
 }
