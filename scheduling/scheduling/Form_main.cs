@@ -63,8 +63,10 @@ namespace scheduling
         }
         private void Form_main_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet9.專案' 資料表。您可以視需要進行移動或移除。
+            this.專案TableAdapter2.Fill(this.tasks_databaseDataSet9.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet5.專案' 資料表。您可以視需要進行移動或移除。
-            this.專案TableAdapter1.Fill(this.tasks_databaseDataSet5.專案);
+            //this.專案TableAdapter1.Fill(this.tasks_databaseDataSet5.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet3.測試' 資料表。您可以視需要進行移動或移除。
             this.測試TableAdapter.Fill(this.tasks_databaseDataSet3.測試);
            
@@ -152,6 +154,26 @@ namespace scheduling
         {
             Form_method manage_method = new Form_method();
             manage_method.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
+                cmd.CommandText = "UPDATE 專案" + " SET 數量 " + "= 14 WHERE 檢測項目 = N'氨氮'";
+                cmd.ExecuteNonQuery();
+                db.Close();
+                refresh_task();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -34,6 +34,7 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
+                //cmd.CommandText = "SELECT MAX(Id) FROM 專案";
                 cmd.CommandText = "INSERT INTO 專案(專案編號,採樣日期起,委託單報告日期,天數,檢測項目,分析方法,數量,課別,案件負責人)VALUES('" +
                     textBox_task_num.Text + "','" +     //// 雙引號取代單引號
                     dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" +
@@ -45,23 +46,6 @@ namespace scheduling
                     textBox_class.Text + "',N'" +
                     textBox_staff.Text +
                     "')";
-                //   cmd.CommandText = "INSERT INTO 員工(員工編號,姓名,職稱,薪資)VALUES('" +
-                //        txtId.Text.Replace("'", "''") + "','" +     //// 雙引號取代單引號
-                //       txtName.Text.Replace("'", "''") + "','" +
-                //        txtP.Text.Replace("'", "''") + "'," +
-                //       txtSalary.Text + ")";
-                /*
-                cmd.CommandText = "INSERT INTO 專案(專案編號,採樣日期起,委託報告日期,天數,檢測項目/設備名稱,分析方法,數量,課別,案件負責人)VALUES('" +
-                    textBox_task_num.Text.Replace("'", "''") + "','" +     //// 雙引號取代單引號
-                    textBox_date1.Text.Replace("'", "''") + "','" +
-                    textBox_date2.Text.Replace("'", "''") + "','" +
-                    textBox_count.Text.Replace("'", "''") + "','" +
-                    textBox_object.Text.Replace("'", "''") + "','" +
-                    textBox_method.Text.Replace("'", "''") + "'," +
-                    textBox_count.Text.Replace("'", "''") + "'," +
-                    textBox_class.Text.Replace("'", "''") + "'," +
-                    textBox_staff.Text + ")";
-                */
                 cmd.ExecuteNonQuery();
                 db.Close();
                 //Form_main_Load(sender, e);

@@ -37,12 +37,13 @@
             this.專案編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.採樣日期起DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.委託單報告日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.天數DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.檢測項目DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.分析方法DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.課別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.案件負責人DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.專案BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tasks_databaseDataSet9 = new scheduling.tasks_databaseDataSet9();
             this.專案BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet5 = new scheduling.tasks_databaseDataSet5();
             this.專案TableAdapter = new scheduling.tasks_databaseDataSet4TableAdapters.專案TableAdapter();
@@ -61,9 +62,13 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label_delete = new System.Windows.Forms.Label();
             this.button_method = new System.Windows.Forms.Button();
+            this.專案TableAdapter2 = new scheduling.tasks_databaseDataSet9TableAdapters.專案TableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -101,13 +106,12 @@
             this.專案編號DataGridViewTextBoxColumn,
             this.採樣日期起DataGridViewTextBoxColumn,
             this.委託單報告日期DataGridViewTextBoxColumn,
-            this.天數DataGridViewTextBoxColumn,
             this.檢測項目DataGridViewTextBoxColumn,
             this.分析方法DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.課別DataGridViewTextBoxColumn,
             this.案件負責人DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.專案BindingSource;
+            this.dataGridView1.DataSource = this.專案BindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(-27, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
@@ -132,12 +136,6 @@
             this.委託單報告日期DataGridViewTextBoxColumn.DataPropertyName = "委託單報告日期";
             this.委託單報告日期DataGridViewTextBoxColumn.HeaderText = "委託單報告日期";
             this.委託單報告日期DataGridViewTextBoxColumn.Name = "委託單報告日期DataGridViewTextBoxColumn";
-            // 
-            // 天數DataGridViewTextBoxColumn
-            // 
-            this.天數DataGridViewTextBoxColumn.DataPropertyName = "天數";
-            this.天數DataGridViewTextBoxColumn.HeaderText = "天數";
-            this.天數DataGridViewTextBoxColumn.Name = "天數DataGridViewTextBoxColumn";
             // 
             // 檢測項目DataGridViewTextBoxColumn
             // 
@@ -168,6 +166,16 @@
             this.案件負責人DataGridViewTextBoxColumn.DataPropertyName = "案件負責人";
             this.案件負責人DataGridViewTextBoxColumn.HeaderText = "案件負責人";
             this.案件負責人DataGridViewTextBoxColumn.Name = "案件負責人DataGridViewTextBoxColumn";
+            // 
+            // 專案BindingSource1
+            // 
+            this.專案BindingSource1.DataMember = "專案";
+            this.專案BindingSource1.DataSource = this.tasks_databaseDataSet9;
+            // 
+            // tasks_databaseDataSet9
+            // 
+            this.tasks_databaseDataSet9.DataSetName = "tasks_databaseDataSet9";
+            this.tasks_databaseDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 專案BindingSource
             // 
@@ -314,11 +322,26 @@
             this.button_method.UseVisualStyleBackColor = true;
             this.button_method.Click += new System.EventHandler(this.button_method_Click);
             // 
+            // 專案TableAdapter2
+            // 
+            this.專案TableAdapter2.ClearBeforeFill = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(586, 599);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button_method);
             this.Controls.Add(this.label_delete);
             this.Controls.Add(this.textBox_delete);
@@ -337,6 +360,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -358,15 +383,6 @@
         private tasks_databaseDataSet5 tasks_databaseDataSet5;
         private System.Windows.Forms.BindingSource 專案BindingSource;
         private tasks_databaseDataSet5TableAdapters.專案TableAdapter 專案TableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 專案編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 採樣日期起DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 委託單報告日期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 天數DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 檢測項目DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 分析方法DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 課別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 案件負責人DataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textBox_delete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -379,6 +395,18 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label_delete;
         private System.Windows.Forms.Button button_method;
+        private tasks_databaseDataSet9 tasks_databaseDataSet9;
+        private System.Windows.Forms.BindingSource 專案BindingSource1;
+        private tasks_databaseDataSet9TableAdapters.專案TableAdapter 專案TableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 專案編號DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 採樣日期起DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 委託單報告日期DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 檢測項目DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分析方法DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 課別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 案件負責人DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }
 

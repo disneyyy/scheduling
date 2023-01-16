@@ -91,6 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tasks_databaseDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="tasks_databaseDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tasks_databaseDataSet10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tasks_databaseDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +130,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>tasks_databaseDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tasks_databaseDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tasks_databaseDataSet9.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form_add_task.resx">
       <DependentUpon>Form_add_task.cs</DependentUpon>
@@ -174,6 +184,17 @@
     </None>
     <None Include="tasks_databaseDataSet1.xss">
       <DependentUpon>tasks_databaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet10.xsc">
+      <DependentUpon>tasks_databaseDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tasks_databaseDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tasks_databaseDataSet10.xss">
+      <DependentUpon>tasks_databaseDataSet10.xsd</DependentUpon>
     </None>
     <None Include="tasks_databaseDataSet2.xsc">
       <DependentUpon>tasks_databaseDataSet2.xsd</DependentUpon>
@@ -251,6 +272,17 @@
     </None>
     <None Include="tasks_databaseDataSet8.xss">
       <DependentUpon>tasks_databaseDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet9.xsc">
+      <DependentUpon>tasks_databaseDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tasks_databaseDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tasks_databaseDataSet9.xss">
+      <DependentUpon>tasks_databaseDataSet9.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
