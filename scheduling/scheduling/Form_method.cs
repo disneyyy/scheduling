@@ -42,6 +42,7 @@ namespace scheduling
             {
                 comboBox_yo.DataSource = ds.Tables[0];
                 dataGridView_yo.DataSource = ds.Tables[0];
+                dataGridView_check_yo.DataSource = ds.Tables[0];
             }
             else
             {
@@ -73,6 +74,8 @@ namespace scheduling
 
         private void Form_method_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet11.Method有機' 資料表。您可以視需要進行移動或移除。
+            this.method有機TableAdapter2.Fill(this.tasks_databaseDataSet11.Method有機);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet10.Method無機' 資料表。您可以視需要進行移動或移除。
             this.method無機TableAdapter1.Fill(this.tasks_databaseDataSet10.Method無機);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet8.Method無機' 資料表。您可以視需要進行移動或移除。
@@ -91,9 +94,11 @@ namespace scheduling
             comboBox_wu.Visible = false;
             comboBox_me_wu.Visible = false;
             dataGridView_wu.Visible = false;
+            dataGridView_check_wu.Visible = false;
             comboBox_yo.Visible = true;
             comboBox_me_yo.Visible = true;
             dataGridView_yo.Visible = true;
+            dataGridView_check_yo.Visible = true;
             selected = "Method有機";
         }
 
@@ -106,9 +111,11 @@ namespace scheduling
             comboBox_wu.Visible = true;
             comboBox_me_wu.Visible = true;
             dataGridView_wu.Visible = true;
+            dataGridView_check_wu.Visible = true;
             comboBox_yo.Visible = false;
             comboBox_me_yo.Visible = false;
             dataGridView_yo.Visible = false;
+            dataGridView_check_yo.Visible = false;
             selected = "Method無機";
         }
 

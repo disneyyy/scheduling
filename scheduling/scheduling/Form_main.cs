@@ -175,5 +175,11 @@ namespace scheduling
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_time_Click(object sender, EventArgs e)
+        {
+            Form_Time time = new Form_Time();
+            time.Show();
+        }
     }
 }

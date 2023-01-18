@@ -64,6 +64,7 @@
             this.button_method = new System.Windows.Forms.Button();
             this.專案TableAdapter2 = new scheduling.tasks_databaseDataSet9TableAdapters.專案TableAdapter();
             this.button3 = new System.Windows.Forms.Button();
+            this.button_time = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -336,11 +337,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button_time
+            // 
+            this.button_time.Location = new System.Drawing.Point(60, 628);
+            this.button_time.Name = "button_time";
+            this.button_time.Size = new System.Drawing.Size(89, 23);
+            this.button_time.TabIndex = 13;
+            this.button_time.Text = "理論工時";
+            this.button_time.UseVisualStyleBackColor = true;
+            this.button_time.Click += new System.EventHandler(this.button_time_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button_time);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button_method);
             this.Controls.Add(this.label_delete);
@@ -407,6 +419,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 課別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 案件負責人DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_time;
     }
 }
 
