@@ -53,7 +53,7 @@ namespace scheduling
             db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
             //建立DataAdapter物件da
             //da帶入查詢的SQL語法為toolStripTextBox1文字方塊的內容
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案", db);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
             //建立DataSet物件ds
             DataSet ds = new DataSet();
             //將da物件所取得的資料填入ds物件
@@ -163,12 +163,16 @@ namespace scheduling
                 SqlConnection db = new SqlConnection();
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 db.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = db;
-                cmd.CommandText = "UPDATE 專案" + " SET 數量 " + "= 14 WHERE 檢測項目 = N'氨氮'";
-                cmd.ExecuteNonQuery();
+                                
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
+                //建立DataSet物件ds
+                DataSet ds = new DataSet();
+                //將da物件所取得的資料填入ds物件
+                da.Fill(ds);
+                //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+                dataGridView1.DataSource = ds.Tables[0];
                 db.Close();
-                refresh_task();
+                //refresh_task();
             }
             catch (Exception ex)
             {
@@ -180,6 +184,40 @@ namespace scheduling
         {
             Form_Time time = new Form_Time();
             time.Show();
+        }
+        BindingManagerBase bm;
+        bool btn4pressed = false;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(btn4pressed == false)
+            {
+                btn4pressed = true;
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                DataSet ds = new DataSet();
+                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
+                daProduct.Fill(ds, "專案");
+                //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
+                label2.DataBindings.Add("Text", ds, "專案.專案編號");
+                label3.DataBindings.Add("Text", ds, "專案.數量");
+                label4.DataBindings.Add("Text", ds, "專案.分析方法");
+                label5.DataBindings.Add("Text", ds, "專案.委託單報告日期");
+                bm = this.BindingContext[ds, "專案"];
+                db.Close();
+                //this 代表 form1 , 使用form1的BindingContext屬性指定bm(BindingManaterBase)物件瀏覽產品資料表
+                //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.bindingmanagerbase(v=vs.110).aspx
+            }
+            else
+            {
+                if(int.Parse(textBox1.Text) < bm.Count)
+                {
+                    bm.Position = int.Parse(textBox1.Text);
+                }
+                else
+                {
+                    bm.Position = 0;
+                }
+            }
         }
     }
 }
