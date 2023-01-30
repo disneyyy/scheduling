@@ -69,6 +69,7 @@ namespace scheduling
             //this.專案TableAdapter1.Fill(this.tasks_databaseDataSet5.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet3.測試' 資料表。您可以視需要進行移動或移除。
             this.測試TableAdapter.Fill(this.tasks_databaseDataSet3.測試);
+            refresh_task();
            
         }
 
@@ -207,17 +208,15 @@ namespace scheduling
                 //this 代表 form1 , 使用form1的BindingContext屬性指定bm(BindingManaterBase)物件瀏覽產品資料表
                 //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.bindingmanagerbase(v=vs.110).aspx
             }
+            if(int.Parse(textBox1.Text) < bm.Count)
+            {
+                bm.Position = int.Parse(textBox1.Text);
+            }
             else
             {
-                if(int.Parse(textBox1.Text) < bm.Count)
-                {
-                    bm.Position = int.Parse(textBox1.Text);
-                }
-                else
-                {
-                    bm.Position = 0;
-                }
+                bm.Position = 0;
             }
+            
         }
     }
 }

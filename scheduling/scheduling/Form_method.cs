@@ -14,14 +14,35 @@ namespace scheduling
 {
     public partial class Form_method : Form
     {
+        BindingManagerBase bm_yo;
+        BindingManagerBase bm_wu;
         public string selected = "Method有機";
         public Form_method()
         {
             InitializeComponent();
             selected = "Method無機";
             refresh();
+            SqlConnection db = new SqlConnection();
+            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            DataSet ds = new DataSet();
+            SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
+            daProduct.Fill(ds, selected);
+            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
+            label_wu.DataBindings.Add("Text", ds, selected + ".數量");
+            bm_wu = this.BindingContext[ds, selected];
+            bm_wu.Position = bm_wu.Count;
+            db.Close();
             selected = "Method有機";
             refresh();
+            SqlConnection db2 = new SqlConnection();
+            db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter daProduct2 = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db2);
+            daProduct.Fill(ds2, selected);
+            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
+            label_yo.DataBindings.Add("Text", ds2, selected + ".數量");
+            bm_yo = this.BindingContext[ds2, selected];
+            db2.Close();
         }
         private void refresh()
         {
@@ -32,7 +53,7 @@ namespace scheduling
             db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
             //建立DataAdapter物件da
             //da帶入查詢的SQL語法為toolStripTextBox1文字方塊的內容
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM " + selected, db);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
             //建立DataSet物件ds
             DataSet ds = new DataSet();
             //將da物件所取得的資料填入ds物件
@@ -199,6 +220,31 @@ namespace scheduling
                 else
                 {
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 0 WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
+                }
+                cmd.ExecuteNonQuery();
+                db.Close();
+                refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
+                if (checkBox_wu.Checked == true)
+                    cmd.CommandText = "UPDATE " + selected + " SET 數量 = " + textBox1.Text + "WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
+                else
+                {
+                    cmd.CommandText = "UPDATE " + selected + " SET 數量 = " + textBox1.Text + "WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
                 }
                 cmd.ExecuteNonQuery();
                 db.Close();

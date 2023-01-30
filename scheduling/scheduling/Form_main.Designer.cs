@@ -377,6 +377,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 17;
+            this.textBox1.Text = "0";
             // 
             // button4
             // 
