@@ -112,6 +112,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>tasks_databaseDataSet12.xsd</DependentUpon>
     </Compile>
+    <Compile Include="tasks_databaseDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tasks_databaseDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tasks_databaseDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tasks_databaseDataSet14.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tasks_databaseDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,6 +246,28 @@
     </None>
     <None Include="tasks_databaseDataSet12.xss">
       <DependentUpon>tasks_databaseDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet13.xsc">
+      <DependentUpon>tasks_databaseDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tasks_databaseDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tasks_databaseDataSet13.xss">
+      <DependentUpon>tasks_databaseDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet14.xsc">
+      <DependentUpon>tasks_databaseDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="tasks_databaseDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tasks_databaseDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tasks_databaseDataSet14.xss">
+      <DependentUpon>tasks_databaseDataSet14.xsd</DependentUpon>
     </None>
     <None Include="tasks_databaseDataSet2.xsc">
       <DependentUpon>tasks_databaseDataSet2.xsd</DependentUpon>

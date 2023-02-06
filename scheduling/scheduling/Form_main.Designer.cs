@@ -71,6 +71,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button_allo = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -122,7 +125,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(-27, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(1282, 521);
+            this.dataGridView1.Size = new System.Drawing.Size(659, 448);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -303,12 +306,11 @@
             this.nameDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.測試BindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(919, 101);
+            this.dataGridView2.Location = new System.Drawing.Point(770, 101);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(338, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(487, 150);
             this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.Visible = false;
             // 
             // label_delete
             // 
@@ -385,7 +387,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
-            this.button4.Text = "button4";
+            this.button4.Text = "get";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -407,11 +409,32 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "label4";
             // 
+            // button_allo
+            // 
+            this.button_allo.Location = new System.Drawing.Point(1028, 569);
+            this.button_allo.Name = "button_allo";
+            this.button_allo.Size = new System.Drawing.Size(75, 23);
+            this.button_allo.TabIndex = 19;
+            this.button_allo.Text = "指派";
+            this.button_allo.UseVisualStyleBackColor = true;
+            this.button_allo.Click += new System.EventHandler(this.button_allo_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(770, 101);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 27;
+            this.dataGridView3.Size = new System.Drawing.Size(487, 150);
+            this.dataGridView3.TabIndex = 20;
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.button_allo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
@@ -443,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,6 +516,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button_allo;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 

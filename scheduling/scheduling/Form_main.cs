@@ -53,7 +53,7 @@ namespace scheduling
             db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
             //建立DataAdapter物件da
             //da帶入查詢的SQL語法為toolStripTextBox1文字方塊的內容
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
             //建立DataSet物件ds
             DataSet ds = new DataSet();
             //將da物件所取得的資料填入ds物件
@@ -165,7 +165,7 @@ namespace scheduling
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 db.Open();
                                 
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
                 //建立DataSet物件ds
                 DataSet ds = new DataSet();
                 //將da物件所取得的資料填入ds物件
@@ -196,13 +196,13 @@ namespace scheduling
                 SqlConnection db = new SqlConnection();
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 DataSet ds = new DataSet();
-                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 委託單報告日期 ASC", db);
+                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
                 daProduct.Fill(ds, "專案");
                 //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
                 label2.DataBindings.Add("Text", ds, "專案.專案編號");
                 label3.DataBindings.Add("Text", ds, "專案.數量");
                 label4.DataBindings.Add("Text", ds, "專案.分析方法");
-                label5.DataBindings.Add("Text", ds, "專案.委託單報告日期");
+                label5.DataBindings.Add("Text", ds, "專案.課別");
                 bm = this.BindingContext[ds, "專案"];
                 db.Close();
                 //this 代表 form1 , 使用form1的BindingContext屬性指定bm(BindingManaterBase)物件瀏覽產品資料表
@@ -217,6 +217,33 @@ namespace scheduling
                 bm.Position = 0;
             }
             
+        }
+
+        private void button_allo_Click(object sender, EventArgs e)
+        {
+            //label4:分析方法
+            try
+            {
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label5.Text + " WHERE 就緒 = 1 AND " + label4.Text +"=1 ORDER BY 數量 ASC", db);
+                //建立DataSet物件ds
+                DataSet ds = new DataSet();
+                //將da物件所取得的資料填入ds物件
+                da.Fill(ds, "Method" + label5.Text);
+                //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+                //dataGridView2.DataSource = ds.Tables[0];
+                dataGridView3.DataSource = ds;
+                dataGridView3.DataMember = "Method" + label5.Text;
+                db.Close();
+                //refresh_task();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
