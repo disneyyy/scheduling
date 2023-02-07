@@ -429,5 +429,30 @@ namespace scheduling
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
+                if (checkBox_wu.Checked == true)
+                    cmd.CommandText = "UPDATE " + selected + " SET 剩餘時間 = 480";
+                else
+                {
+                    cmd.CommandText = "UPDATE " + selected + " SET 剩餘時間 = 480";
+                }
+                cmd.ExecuteNonQuery();
+                db.Close();
+                refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

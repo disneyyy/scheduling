@@ -51,15 +51,7 @@
             this.textBox_refresh = new System.Windows.Forms.TextBox();
             this.專案TableAdapter1 = new scheduling.tasks_databaseDataSet5TableAdapters.專案TableAdapter();
             this.textBox_delete = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label_basic_time = new System.Windows.Forms.Label();
             this.label_delete = new System.Windows.Forms.Label();
             this.button_method = new System.Windows.Forms.Button();
             this.專案TableAdapter2 = new scheduling.tasks_databaseDataSet9TableAdapters.專案TableAdapter();
@@ -73,6 +65,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button_allo = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_time = new System.Windows.Forms.DataGridView();
+            this.label_time = new System.Windows.Forms.Label();
+            this.label_last = new System.Windows.Forms.Label();
+            this.label_worker = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tasks_databaseDataSet15 = new scheduling.tasks_databaseDataSet15();
+            this.專案BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.專案TableAdapter3 = new scheduling.tasks_databaseDataSet15TableAdapters.專案TableAdapter();
+            this.分析人員 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_allo2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,8 +82,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -120,12 +124,13 @@
             this.分析方法DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.課別DataGridViewTextBoxColumn,
-            this.案件負責人DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.專案BindingSource1;
+            this.案件負責人DataGridViewTextBoxColumn,
+            this.分析人員});
+            this.dataGridView1.DataSource = this.專案BindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(-27, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 448);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
@@ -231,86 +236,14 @@
             this.textBox_delete.Size = new System.Drawing.Size(100, 25);
             this.textBox_delete.TabIndex = 9;
             // 
-            // label1
+            // label_basic_time
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1049, 518);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(996, 435);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Visible = false;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1079, 368);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1079, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "date";
-            this.date.Name = "date";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.date,
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.測試BindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(770, 101);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(487, 150);
-            this.dataGridView2.TabIndex = 2;
+            this.label_basic_time.AutoSize = true;
+            this.label_basic_time.Location = new System.Drawing.Point(1049, 508);
+            this.label_basic_time.Name = "label_basic_time";
+            this.label_basic_time.Size = new System.Drawing.Size(67, 15);
+            this.label_basic_time.TabIndex = 5;
+            this.label_basic_time.Text = "基本工時";
             // 
             // label_delete
             // 
@@ -360,18 +293,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(691, 632);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 15;
-            this.label2.Text = "label2";
+            this.label2.Text = "專案編號";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(783, 649);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 16;
-            this.label3.Text = "label3";
+            this.label3.Text = "數量";
             // 
             // textBox1
             // 
@@ -394,20 +327,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(874, 628);
+            this.label4.Location = new System.Drawing.Point(887, 636);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 16;
-            this.label4.Text = "label4";
+            this.label4.Text = "分析方法";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1010, 649);
+            this.label5.Location = new System.Drawing.Point(976, 649);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 16;
-            this.label5.Text = "label4";
+            this.label5.Text = "課別";
             // 
             // button_allo
             // 
@@ -422,22 +355,100 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(770, 101);
+            this.dataGridView3.Location = new System.Drawing.Point(768, 68);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 27;
             this.dataGridView3.Size = new System.Drawing.Size(487, 150);
             this.dataGridView3.TabIndex = 20;
+            // 
+            // dataGridView_time
+            // 
+            this.dataGridView_time.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_time.Location = new System.Drawing.Point(694, 275);
+            this.dataGridView_time.Name = "dataGridView_time";
+            this.dataGridView_time.RowTemplate.Height = 27;
+            this.dataGridView_time.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView_time.TabIndex = 21;
+            // 
+            // label_time
+            // 
+            this.label_time.AutoSize = true;
+            this.label_time.Location = new System.Drawing.Point(1049, 537);
+            this.label_time.Name = "label_time";
+            this.label_time.Size = new System.Drawing.Size(37, 15);
+            this.label_time.TabIndex = 5;
+            this.label_time.Text = "時間";
+            // 
+            // label_last
+            // 
+            this.label_last.AutoSize = true;
+            this.label_last.Location = new System.Drawing.Point(1168, 362);
+            this.label_last.Name = "label_last";
+            this.label_last.Size = new System.Drawing.Size(67, 15);
+            this.label_last.TabIndex = 5;
+            this.label_last.Text = "剩餘時間";
+            // 
+            // label_worker
+            // 
+            this.label_worker.AutoSize = true;
+            this.label_worker.Location = new System.Drawing.Point(1168, 332);
+            this.label_worker.Name = "label_worker";
+            this.label_worker.Size = new System.Drawing.Size(67, 15);
+            this.label_worker.TabIndex = 5;
+            this.label_worker.Text = "分析人員";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(832, 610);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "檢測項目";
+            // 
+            // tasks_databaseDataSet15
+            // 
+            this.tasks_databaseDataSet15.DataSetName = "tasks_databaseDataSet15";
+            this.tasks_databaseDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 專案BindingSource2
+            // 
+            this.專案BindingSource2.DataMember = "專案";
+            this.專案BindingSource2.DataSource = this.tasks_databaseDataSet15;
+            // 
+            // 專案TableAdapter3
+            // 
+            this.專案TableAdapter3.ClearBeforeFill = true;
+            // 
+            // 分析人員
+            // 
+            this.分析人員.DataPropertyName = "分析人員";
+            this.分析人員.HeaderText = "分析人員";
+            this.分析人員.Name = "分析人員";
+            // 
+            // button_allo2
+            // 
+            this.button_allo2.Location = new System.Drawing.Point(1119, 569);
+            this.button_allo2.Name = "button_allo2";
+            this.button_allo2.Size = new System.Drawing.Size(75, 23);
+            this.button_allo2.TabIndex = 19;
+            this.button_allo2.Text = "確認";
+            this.button_allo2.UseVisualStyleBackColor = true;
+            this.button_allo2.Click += new System.EventHandler(this.button_allo2_Click);
             // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.dataGridView_time);
             this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.button_allo2);
             this.Controls.Add(this.button_allo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -449,11 +460,10 @@
             this.Controls.Add(this.textBox_refresh);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label_worker);
+            this.Controls.Add(this.label_last);
+            this.Controls.Add(this.label_time);
+            this.Controls.Add(this.label_basic_time);
             this.Controls.Add(this.button_add_task);
             this.Name = "Form_main";
             this.Text = "Main";
@@ -465,8 +475,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,15 +498,7 @@
         private System.Windows.Forms.BindingSource 專案BindingSource;
         private tasks_databaseDataSet5TableAdapters.專案TableAdapter 專案TableAdapter1;
         private System.Windows.Forms.TextBox textBox_delete;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label_basic_time;
         private System.Windows.Forms.Label label_delete;
         private System.Windows.Forms.Button button_method;
         private tasks_databaseDataSet9 tasks_databaseDataSet9;
@@ -518,6 +522,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button_allo;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView_time;
+        private System.Windows.Forms.Label label_time;
+        private System.Windows.Forms.Label label_last;
+        private System.Windows.Forms.Label label_worker;
+        private System.Windows.Forms.Label label1;
+        private tasks_databaseDataSet15 tasks_databaseDataSet15;
+        private System.Windows.Forms.BindingSource 專案BindingSource2;
+        private tasks_databaseDataSet15TableAdapters.專案TableAdapter 專案TableAdapter3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分析人員;
+        private System.Windows.Forms.Button button_allo2;
     }
 }
 
