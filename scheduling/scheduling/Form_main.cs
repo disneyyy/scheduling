@@ -84,10 +84,6 @@ namespace scheduling
             refresh_task();
         }
 
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            textBox_delete.Text = "1";
-        }
 
         private void button_method_Click(object sender, EventArgs e)
         {
@@ -102,16 +98,16 @@ namespace scheduling
                 SqlConnection db = new SqlConnection();
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 db.Open();
-                                
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
-                //建立DataSet物件ds
-                DataSet ds = new DataSet();
-                //將da物件所取得的資料填入ds物件
-                da.Fill(ds);
-                //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
-                dataGridView1.DataSource = ds.Tables[0];
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
+                cmd.CommandText = "UPDATE " + "Method有機" + " SET 累積時間 = 0";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE " + "Method無機" + " SET 累積時間 = 0";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE " + "專案" + " SET 分析人員 = '0'";
+                cmd.ExecuteNonQuery();
                 db.Close();
-                //refresh_task();
+                
             }
             catch (Exception ex)
             {
@@ -134,11 +130,11 @@ namespace scheduling
             SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
             daProduct.Fill(ds, "專案");
             //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
-            label2.DataBindings.Add("Text", ds, "專案.專案編號");
-            label3.DataBindings.Add("Text", ds, "專案.數量");
-            label4.DataBindings.Add("Text", ds, "專案.分析方法");
-            label5.DataBindings.Add("Text", ds, "專案.課別");
-            label1.DataBindings.Add("Text", ds, "專案.檢測項目");
+            label_task_id.DataBindings.Add("Text", ds, "專案.專案編號");
+            label_count.DataBindings.Add("Text", ds, "專案.數量");
+            label_method.DataBindings.Add("Text", ds, "專案.分析方法");
+            label_class.DataBindings.Add("Text", ds, "專案.課別");
+            label_test_obj.DataBindings.Add("Text", ds, "專案.檢測項目");
             bm = this.BindingContext[ds, "專案"];
             db.Close();
             //this 代表 form1 , 使用form1的BindingContext屬性指定bm(BindingManaterBase)物件瀏覽產品資料表
@@ -151,11 +147,14 @@ namespace scheduling
             {
                 bm.Position = 0;
             }
-            label2.DataBindings.Clear();
-            label3.DataBindings.Clear();
-            label4.DataBindings.Clear();
-            label5.DataBindings.Clear();
-            label1.DataBindings.Clear();
+            label_task_id.DataBindings.Clear();
+            label_count.DataBindings.Clear();
+            label_method.DataBindings.Clear();
+            label_class.DataBindings.Clear();
+            label_test_obj.DataBindings.Clear();
+
+            //button_allo_Click(sender, e);
+            //button_allo2_Click(sender, e);
         }
 
         private void button_allo_Click(object sender, EventArgs e)
@@ -167,17 +166,17 @@ namespace scheduling
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 db.Open();
 
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label5.Text + " WHERE 就緒 = 1 AND " + label4.Text +"=1 ORDER BY 剩餘時間 DESC, 數量 ASC", db);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text +"=1 ORDER BY 累積時間 ASC, 數量 ASC", db);
                 //建立DataSet物件ds
                 DataSet ds = new DataSet();
                 //將da物件所取得的資料填入ds物件
-                da.Fill(ds, "Method" + label5.Text);
+                da.Fill(ds, "Method" + label_class.Text);
                 //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
                 //dataGridView2.DataSource = ds.Tables[0];
                 dataGridView3.DataSource = ds;
-                dataGridView3.DataMember = "Method" + label5.Text;
+                dataGridView3.DataMember = "Method" + label_class.Text;
 
-                SqlDataAdapter da_time = new SqlDataAdapter("SELECT * FROM Time WHERE 分析編號 = '" + label4.Text + "'", db);
+                SqlDataAdapter da_time = new SqlDataAdapter("SELECT * FROM Time WHERE 分析編號 = '" + label_method.Text + "'", db);
                 DataSet ds_time = new DataSet();
                 da_time.Fill(ds_time, "Time");
                 dataGridView_time.DataSource = ds_time;
@@ -187,12 +186,14 @@ namespace scheduling
 
                 label_basic_time.DataBindings.Add("Text", ds_time, "Time.基本工時");
                 label_time.DataBindings.Add("Text", ds_time, "Time.作業時間");
-                label_last.DataBindings.Add("Text", ds, "Method" +label5.Text+".剩餘時間");
-                label_worker.DataBindings.Add("Text", ds, "Method" + label5.Text + ".授權人員");
+                label_last.DataBindings.Add("Text", ds, "Method" +label_class.Text+".累積時間");
+                label_worker.DataBindings.Add("Text", ds, "Method" + label_class.Text + ".授權人員");
 
                 bm_time = this.BindingContext[ds_time, "Time"];
-                bm_method = this.BindingContext[ds, "Method" + label5.Text];
-                
+                bm_method = this.BindingContext[ds, "Method" + label_class.Text];
+
+                if (bm_method.Count == 0) label_worker.Text = "0";
+                if (bm_time.Count == 0) label_basic_time.Text = "-1";
                 //refresh_task();
 
 
@@ -215,20 +216,22 @@ namespace scheduling
                 SqlConnection db = new SqlConnection();
                 db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                 db.Open();
-
-               
-                int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label3.Text);
-                int time_last = int.Parse(label_last.Text);
-                time_last -= time_consume;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = db;
-                cmd.CommandText = "UPDATE Method" + label5.Text + " SET 剩餘時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label2.Text + "' AND 檢測項目 = N'" + label1.Text + "'";
-                cmd.ExecuteNonQuery();
-
+                if(label_worker.Text != "0")
+                {
+                    int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label_count.Text);
+                    int time_last = int.Parse(label_last.Text);
+                    time_last += time_consume;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = db;
+                    cmd.CommandText = "UPDATE Method" + label_class.Text + " SET 累積時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
+                    cmd.ExecuteNonQuery();
+                    cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
+                    cmd.ExecuteNonQuery();
+                }
                 db.Close();
                 refresh_task();
+                int temp = int.Parse(textBox1.Text) + 1;
+                textBox1.Text = "" + temp;
             }
             catch (Exception ex)
             {
@@ -238,65 +241,110 @@ namespace scheduling
 
         private void button_allo3_Click(object sender, EventArgs e)
         {
-            try
+            
+            BindingManagerBase bm;
+            SqlConnection db = new SqlConnection();
+            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            DataSet ds = new DataSet();
+            SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
+            daProduct.Fill(ds, "專案");
+            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
+            label_task_id.DataBindings.Add("Text", ds, "專案.專案編號");
+            label_count.DataBindings.Add("Text", ds, "專案.數量");
+            label_method.DataBindings.Add("Text", ds, "專案.分析方法");
+            label_class.DataBindings.Add("Text", ds, "專案.課別");
+            label_test_obj.DataBindings.Add("Text", ds, "專案.檢測項目");
+            bm = this.BindingContext[ds, "專案"];
+            db.Close();
+            if (int.Parse(textBox1.Text) < bm.Count)
             {
-                SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
-                db.Open();
-
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label5.Text + " WHERE 就緒 = 1 AND " + label4.Text + "=1 ORDER BY 剩餘時間 DESC, 數量 ASC", db);
-                //建立DataSet物件ds
-                DataSet ds = new DataSet();
-                //將da物件所取得的資料填入ds物件
-                da.Fill(ds, "Method" + label5.Text);
-                //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
-                //dataGridView2.DataSource = ds.Tables[0];
-                dataGridView3.DataSource = ds;
-                dataGridView3.DataMember = "Method" + label5.Text;
-
-                SqlDataAdapter da_time = new SqlDataAdapter("SELECT * FROM Time WHERE 分析編號 = '" + label4.Text + "'", db);
-                DataSet ds_time = new DataSet();
-                da_time.Fill(ds_time, "Time");
-                dataGridView_time.DataSource = ds_time;
-                dataGridView_time.DataMember = "Time";
-
-                BindingManagerBase bm_time, bm_method;
-
-                label_basic_time.DataBindings.Add("Text", ds_time, "Time.基本工時");
-                label_time.DataBindings.Add("Text", ds_time, "Time.作業時間");
-                label_last.DataBindings.Add("Text", ds, "Method" + label5.Text + ".剩餘時間");
-                label_worker.DataBindings.Add("Text", ds, "Method" + label5.Text + ".授權人員");
-
-                bm_time = this.BindingContext[ds_time, "Time"];
-                bm_method = this.BindingContext[ds, "Method" + label5.Text];
-
-                //refresh_task();
-                int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label3.Text);
-                int time_last = int.Parse(label_last.Text);
-                while (time_last <= 0 && bm_method.Position <= bm_method.Count)
+                bm.Position = int.Parse(textBox1.Text);
+            }
+            else
+            {
+                bm.Position = 0;
+            }
+            for(int i = 0; i < bm.Count; i++)
+            {
+                try
                 {
-                    bm_method.Position++;
-                    time_last = int.Parse(label_last.Text);
+                    bm.Position = i;
+                    SqlConnection db2 = new SqlConnection();
+                    db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                    db2.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 ORDER BY 累積時間 ASC, 數量 ASC", db);
+                    //建立DataSet物件ds
+                    DataSet ds2 = new DataSet();
+                    //將da物件所取得的資料填入ds物件
+                    da.Fill(ds2, "Method" + label_class.Text);
+                    //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+                    //dataGridView2.DataSource = ds.Tables[0];
+                    dataGridView3.DataSource = ds2;
+                    dataGridView3.DataMember = "Method" + label_class.Text;
+
+                    SqlDataAdapter da_time = new SqlDataAdapter("SELECT * FROM Time WHERE 分析編號 = '" + label_method.Text + "'", db2);
+                    DataSet ds_time = new DataSet();
+                    da_time.Fill(ds_time, "Time");
+                    dataGridView_time.DataSource = ds_time;
+                    dataGridView_time.DataMember = "Time";
+
+                    BindingManagerBase bm_time, bm_method;
+
+                    label_basic_time.DataBindings.Add("Text", ds_time, "Time.基本工時");
+                    label_time.DataBindings.Add("Text", ds_time, "Time.作業時間");
+                    label_last.DataBindings.Add("Text", ds2, "Method" + label_class.Text + ".累積時間");
+                    label_worker.DataBindings.Add("Text", ds2, "Method" + label_class.Text + ".授權人員");
+
+                    bm_time = this.BindingContext[ds_time, "Time"];
+                    bm_method = this.BindingContext[ds2, "Method" + label_class.Text];
+
+                    if (bm_method.Count == 0) label_worker.Text = "0";
+                    if (bm_time.Count == 0) label_basic_time.Text = "-1";
+                    //refresh_task();
+
+
+                    label_basic_time.DataBindings.Clear();
+                    label_time.DataBindings.Clear();
+                    label_last.DataBindings.Clear();
+                    label_worker.DataBindings.Clear();
+                    db2.Close();
+
+
+
+                    SqlConnection db3 = new SqlConnection();
+                    db3.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                    db3.Open();
+                    if (label_worker.Text != "0" && int.Parse(label_basic_time.Text) >= 0)
+                    {
+                        int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label_count.Text);
+                        int time_last = int.Parse(label_last.Text);
+                        if(time_last < 480)
+                        {
+                            time_last += time_consume;
+                            SqlCommand cmd = new SqlCommand();
+                            cmd.Connection = db3;
+                            cmd.CommandText = "UPDATE Method" + label_class.Text + " SET 累積時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
+                            cmd.ExecuteNonQuery();
+                            cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    db3.Close();
+                    refresh_task();
                 }
-                if (time_last >= time_consume) time_last -= time_consume;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = db;
-                cmd.CommandText = "UPDATE Method" + label5.Text + " SET 剩餘時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label2 + "', 檢測項目 = N'" + label1.Text + "'";
-                cmd.ExecuteNonQuery();
-
-
-                label_basic_time.DataBindings.Clear();
-                label_time.DataBindings.Clear();
-                label_last.DataBindings.Clear();
-                label_worker.DataBindings.Clear();
-                db.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            label_task_id.DataBindings.Clear();
+            label_count.DataBindings.Clear();
+            label_method.DataBindings.Clear();
+            label_class.DataBindings.Clear();
+            label_test_obj.DataBindings.Clear();
+
         }
     }
 }

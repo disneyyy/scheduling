@@ -440,10 +440,10 @@ namespace scheduling
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
                 if (checkBox_wu.Checked == true)
-                    cmd.CommandText = "UPDATE " + selected + " SET 剩餘時間 = 480";
+                    cmd.CommandText = "UPDATE " + selected + " SET 累積時間 = 0";
                 else
                 {
-                    cmd.CommandText = "UPDATE " + selected + " SET 剩餘時間 = 480";
+                    cmd.CommandText = "UPDATE " + selected + " SET 累積時間 = 0";
                 }
                 cmd.ExecuteNonQuery();
                 db.Close();

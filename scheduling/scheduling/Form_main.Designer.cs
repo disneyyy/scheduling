@@ -42,6 +42,9 @@
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.課別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.案件負責人DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.分析人員 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.專案BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tasks_databaseDataSet15 = new scheduling.tasks_databaseDataSet15();
             this.專案BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet9 = new scheduling.tasks_databaseDataSet9();
             this.專案BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,35 +60,32 @@
             this.專案TableAdapter2 = new scheduling.tasks_databaseDataSet9TableAdapters.專案TableAdapter();
             this.button3 = new System.Windows.Forms.Button();
             this.button_time = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_task_id = new System.Windows.Forms.Label();
+            this.label_count = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_method = new System.Windows.Forms.Label();
+            this.label_class = new System.Windows.Forms.Label();
             this.button_allo = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView_time = new System.Windows.Forms.DataGridView();
             this.label_time = new System.Windows.Forms.Label();
             this.label_last = new System.Windows.Forms.Label();
             this.label_worker = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tasks_databaseDataSet15 = new scheduling.tasks_databaseDataSet15();
-            this.專案BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label_test_obj = new System.Windows.Forms.Label();
             this.專案TableAdapter3 = new scheduling.tasks_databaseDataSet15TableAdapters.專案TableAdapter();
-            this.分析人員 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_allo2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -132,7 +132,6 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(657, 448);
             this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // 專案編號DataGridViewTextBoxColumn
             // 
@@ -181,6 +180,22 @@
             this.案件負責人DataGridViewTextBoxColumn.DataPropertyName = "案件負責人";
             this.案件負責人DataGridViewTextBoxColumn.HeaderText = "案件負責人";
             this.案件負責人DataGridViewTextBoxColumn.Name = "案件負責人DataGridViewTextBoxColumn";
+            // 
+            // 分析人員
+            // 
+            this.分析人員.DataPropertyName = "分析人員";
+            this.分析人員.HeaderText = "分析人員";
+            this.分析人員.Name = "分析人員";
+            // 
+            // 專案BindingSource2
+            // 
+            this.專案BindingSource2.DataMember = "專案";
+            this.專案BindingSource2.DataSource = this.tasks_databaseDataSet15;
+            // 
+            // tasks_databaseDataSet15
+            // 
+            this.tasks_databaseDataSet15.DataSetName = "tasks_databaseDataSet15";
+            this.tasks_databaseDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 專案BindingSource1
             // 
@@ -270,11 +285,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(586, 599);
+            this.button3.Location = new System.Drawing.Point(467, 533);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
-            this.button3.Text = "button3";
+            this.button3.Text = "reset";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -288,23 +303,23 @@
             this.button_time.UseVisualStyleBackColor = true;
             this.button_time.Click += new System.EventHandler(this.button_time_Click);
             // 
-            // label2
+            // label_task_id
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(691, 632);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "專案編號";
+            this.label_task_id.AutoSize = true;
+            this.label_task_id.Location = new System.Drawing.Point(691, 632);
+            this.label_task_id.Name = "label_task_id";
+            this.label_task_id.Size = new System.Drawing.Size(67, 15);
+            this.label_task_id.TabIndex = 15;
+            this.label_task_id.Text = "專案編號";
             // 
-            // label3
+            // label_count
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(783, 649);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "數量";
+            this.label_count.AutoSize = true;
+            this.label_count.Location = new System.Drawing.Point(783, 649);
+            this.label_count.Name = "label_count";
+            this.label_count.Size = new System.Drawing.Size(37, 15);
+            this.label_count.TabIndex = 16;
+            this.label_count.Text = "數量";
             // 
             // textBox1
             // 
@@ -324,23 +339,23 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label4
+            // label_method
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(887, 636);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 15);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "分析方法";
+            this.label_method.AutoSize = true;
+            this.label_method.Location = new System.Drawing.Point(887, 636);
+            this.label_method.Name = "label_method";
+            this.label_method.Size = new System.Drawing.Size(67, 15);
+            this.label_method.TabIndex = 16;
+            this.label_method.Text = "分析方法";
             // 
-            // label5
+            // label_class
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(976, 649);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "課別";
+            this.label_class.AutoSize = true;
+            this.label_class.Location = new System.Drawing.Point(976, 649);
+            this.label_class.Name = "label_class";
+            this.label_class.Size = new System.Drawing.Size(37, 15);
+            this.label_class.TabIndex = 16;
+            this.label_class.Text = "課別";
             // 
             // button_allo
             // 
@@ -397,34 +412,18 @@
             this.label_worker.TabIndex = 5;
             this.label_worker.Text = "分析人員";
             // 
-            // label1
+            // label_test_obj
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(832, 610);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "檢測項目";
-            // 
-            // tasks_databaseDataSet15
-            // 
-            this.tasks_databaseDataSet15.DataSetName = "tasks_databaseDataSet15";
-            this.tasks_databaseDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 專案BindingSource2
-            // 
-            this.專案BindingSource2.DataMember = "專案";
-            this.專案BindingSource2.DataSource = this.tasks_databaseDataSet15;
+            this.label_test_obj.AutoSize = true;
+            this.label_test_obj.Location = new System.Drawing.Point(832, 610);
+            this.label_test_obj.Name = "label_test_obj";
+            this.label_test_obj.Size = new System.Drawing.Size(67, 15);
+            this.label_test_obj.TabIndex = 16;
+            this.label_test_obj.Text = "檢測項目";
             // 
             // 專案TableAdapter3
             // 
             this.專案TableAdapter3.ClearBeforeFill = true;
-            // 
-            // 分析人員
-            // 
-            this.分析人員.DataPropertyName = "分析人員";
-            this.分析人員.HeaderText = "分析人員";
-            this.分析人員.Name = "分析人員";
             // 
             // button_allo2
             // 
@@ -434,7 +433,7 @@
             this.button_allo2.TabIndex = 19;
             this.button_allo2.Text = "確認";
             this.button_allo2.UseVisualStyleBackColor = true;
-            this.button_allo2.Click += new System.EventHandler(this.button_allo2_Click);
+            this.button_allo2.Click += new System.EventHandler(this.button_allo3_Click);
             // 
             // Form_main
             // 
@@ -447,11 +446,11 @@
             this.Controls.Add(this.button_allo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_class);
+            this.Controls.Add(this.label_test_obj);
+            this.Controls.Add(this.label_method);
+            this.Controls.Add(this.label_count);
+            this.Controls.Add(this.label_task_id);
             this.Controls.Add(this.button_time);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button_method);
@@ -471,14 +470,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,19 +513,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 案件負責人DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_time;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_task_id;
+        private System.Windows.Forms.Label label_count;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_method;
+        private System.Windows.Forms.Label label_class;
         private System.Windows.Forms.Button button_allo;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView_time;
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.Label label_last;
         private System.Windows.Forms.Label label_worker;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_test_obj;
         private tasks_databaseDataSet15 tasks_databaseDataSet15;
         private System.Windows.Forms.BindingSource 專案BindingSource2;
         private tasks_databaseDataSet15TableAdapters.專案TableAdapter 專案TableAdapter3;
