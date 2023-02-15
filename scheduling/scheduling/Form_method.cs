@@ -46,6 +46,7 @@ namespace scheduling
             label_getname_yo.DataBindings.Add("Text", ds2, selected + ".授權人員");
             bm_yo = this.BindingContext[ds2, selected];
             db2.Close();
+            refresh2();
         }
         private void refresh()
         {
@@ -65,16 +66,49 @@ namespace scheduling
             if(selected == "Method有機")
             {
                 comboBox_yo.DataSource = ds.Tables[0];
-                dataGridView_yo.DataSource = ds.Tables[0];
-                dataGridView_check_yo.DataSource = ds.Tables[0];
             }
             else
             {
                 comboBox_wu.DataSource = ds.Tables[0];
-                dataGridView_wu.DataSource = ds.Tables[0];
-                dataGridView_check_wu.DataSource = ds.Tables[0];
             }
-           
+            db.Close();
+            
+        }
+
+        private void refresh2()
+        {
+            SqlConnection db4 = new SqlConnection();
+            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db4.Open();
+            //SqlDataAdapter da2 = new SqlDataAdapter("SELECT 授權人員 FROM " + selected, db4);
+            SqlDataAdapter da3 = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db4);
+            SqlDataAdapter da4 = new SqlDataAdapter("SELECT 授權人員,就緒,數量,累積時間 FROM " + selected + " ORDER BY 數量 ASC", db4);
+            //建立DataSet物件ds
+            /*
+            DataSet ds2 = new DataSet();
+            //將da物件所取得的資料填入ds物件
+            da2.Fill(ds2, selected);
+            //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+            //dataGridView2.DataSource = ds.Tables[0];
+            comboBox1.DataSource = ds2;
+            //comboBox1.DisplayMember = selected;
+            */
+            DataSet ds3 = new DataSet();
+            //將da物件所取得的資料填入ds物件
+            da3.Fill(ds3, selected);
+            //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+            //dataGridView2.DataSource = ds.Tables[0];
+            dataGridView2.DataSource = ds3;
+            dataGridView2.DataMember = selected;
+
+            DataSet ds4 = new DataSet();
+            //將da物件所取得的資料填入ds物件
+            da4.Fill(ds4, selected);
+            //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+            //dataGridView2.DataSource = ds.Tables[0];
+            dataGridView1.DataSource = ds4;
+            dataGridView1.DataMember = selected;
+            db4.Close();
         }
         private void button_add_Click(object sender, EventArgs e)
         {
@@ -89,6 +123,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -115,36 +150,36 @@ namespace scheduling
 
         private void checkBox_yo_CheckStateChanged(object sender, EventArgs e)
         {
-            if(checkBox_yo.Checked ==  checkBox_wu.Checked)
+            if(radioButton_yo.Checked == true)
             {
-                checkBox_wu.Checked = !checkBox_wu.Checked;
+                comboBox_wu.Visible = false;
+                comboBox_me_wu.Visible = false;
+                comboBox_yo.Visible = true;
+                comboBox_me_yo.Visible = true;
+                selected = "Method有機";
+                refresh2();
             }
-            comboBox_wu.Visible = false;
-            comboBox_me_wu.Visible = false;
-            dataGridView_wu.Visible = false;
-            dataGridView_check_wu.Visible = false;
-            comboBox_yo.Visible = true;
-            comboBox_me_yo.Visible = true;
-            dataGridView_yo.Visible = true;
-            dataGridView_check_yo.Visible = true;
-            selected = "Method有機";
         }
 
         private void checkBox_wu_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_yo.Checked == checkBox_wu.Checked)
+            if (radioButton_wu.Checked == true)
             {
-                checkBox_yo.Checked = !checkBox_yo.Checked;
+                comboBox_wu.Visible = true;
+                comboBox_me_wu.Visible = true;
+                comboBox_yo.Visible = false;
+                comboBox_me_yo.Visible = false;
+                selected = "Method無機";
+                refresh2();
             }
-            comboBox_wu.Visible = true;
-            comboBox_me_wu.Visible = true;
-            dataGridView_wu.Visible = true;
-            dataGridView_check_wu.Visible = true;
-            comboBox_yo.Visible = false;
-            comboBox_me_yo.Visible = false;
-            dataGridView_yo.Visible = false;
-            dataGridView_check_yo.Visible = false;
-            selected = "Method無機";
+            else
+            {
+                comboBox_wu.Visible = false;
+                comboBox_me_wu.Visible = false;
+                comboBox_yo.Visible = true;
+                comboBox_me_yo.Visible = true;
+                selected = "Method有機";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -160,6 +195,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -180,6 +216,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -252,7 +289,7 @@ namespace scheduling
                     
                 }
                 */
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                 {
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                 }
@@ -266,6 +303,7 @@ namespace scheduling
 
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -337,7 +375,7 @@ namespace scheduling
 
                 }
                 */
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                 {
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                 }
@@ -348,6 +386,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -364,7 +403,7 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                     cmd.CommandText = "UPDATE " + selected + " SET 數量 = " + textBox1.Text + "WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                 else
                 {
@@ -373,6 +412,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -389,7 +429,7 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                     cmd.CommandText = "UPDATE " + selected + " SET 就緒 = 1" + "WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                 else
                 {
@@ -398,6 +438,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -414,7 +455,7 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                     cmd.CommandText = "UPDATE " + selected + " SET 就緒 = 0" + "WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                 else
                 {
@@ -423,6 +464,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {
@@ -439,7 +481,7 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                if (checkBox_wu.Checked == true)
+                if (radioButton_wu.Checked == true)
                     cmd.CommandText = "UPDATE " + selected + " SET 累積時間 = 0";
                 else
                 {
@@ -448,6 +490,7 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 db.Close();
                 refresh();
+                refresh2();
             }
             catch (Exception ex)
             {

@@ -75,6 +75,9 @@
             this.label_test_obj = new System.Windows.Forms.Label();
             this.專案TableAdapter3 = new scheduling.tasks_databaseDataSet15TableAdapters.專案TableAdapter();
             this.button_allo2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton_average = new System.Windows.Forms.RadioButton();
+            this.radioButton_efficient = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -435,11 +439,46 @@
             this.button_allo2.UseVisualStyleBackColor = true;
             this.button_allo2.Click += new System.EventHandler(this.button_allo3_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton_efficient);
+            this.groupBox1.Controls.Add(this.radioButton_average);
+            this.groupBox1.Location = new System.Drawing.Point(694, 452);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // radioButton_average
+            // 
+            this.radioButton_average.AutoSize = true;
+            this.radioButton_average.Checked = true;
+            this.radioButton_average.Location = new System.Drawing.Point(18, 40);
+            this.radioButton_average.Name = "radioButton_average";
+            this.radioButton_average.Size = new System.Drawing.Size(88, 19);
+            this.radioButton_average.TabIndex = 0;
+            this.radioButton_average.TabStop = true;
+            this.radioButton_average.Text = "平均人力";
+            this.radioButton_average.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_efficient
+            // 
+            this.radioButton_efficient.AutoSize = true;
+            this.radioButton_efficient.Location = new System.Drawing.Point(18, 65);
+            this.radioButton_efficient.Name = "radioButton_efficient";
+            this.radioButton_efficient.Size = new System.Drawing.Size(118, 19);
+            this.radioButton_efficient.TabIndex = 1;
+            this.radioButton_efficient.TabStop = true;
+            this.radioButton_efficient.Text = "生產力最大化";
+            this.radioButton_efficient.UseVisualStyleBackColor = true;
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView_time);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.button_allo2);
@@ -478,6 +517,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +572,9 @@
         private tasks_databaseDataSet15TableAdapters.專案TableAdapter 專案TableAdapter3;
         private System.Windows.Forms.DataGridViewTextBoxColumn 分析人員;
         private System.Windows.Forms.Button button_allo2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton_efficient;
+        private System.Windows.Forms.RadioButton radioButton_average;
     }
 }
 

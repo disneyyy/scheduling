@@ -38,24 +38,14 @@
             this.tasks_databaseDataSet7 = new scheduling.tasks_databaseDataSet7();
             this.label_name2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox_wu = new System.Windows.Forms.CheckBox();
-            this.checkBox_yo = new System.Windows.Forms.CheckBox();
             this.method有機TableAdapter1 = new scheduling.tasks_databaseDataSet6TableAdapters.Method有機TableAdapter();
             this.method有機TableAdapter = new scheduling.tasks_databaseDataSet7TableAdapters.Method有機TableAdapter();
             this.comboBox_wu = new System.Windows.Forms.ComboBox();
             this.method無機BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet8 = new scheduling.tasks_databaseDataSet8();
             this.method無機TableAdapter = new scheduling.tasks_databaseDataSet8TableAdapters.Method無機TableAdapter();
-            this.dataGridView_yo = new System.Windows.Forms.DataGridView();
-            this.授權人員DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.method有機BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet13 = new scheduling.tasks_databaseDataSet13();
-            this.dataGridView_wu = new System.Windows.Forms.DataGridView();
-            this.授權人員DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.method無機BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet14 = new scheduling.tasks_databaseDataSet14();
             this.button2 = new System.Windows.Forms.Button();
@@ -68,86 +58,6 @@
             this.tasks_databaseDataSet10 = new scheduling.tasks_databaseDataSet10();
             this.method無機BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.method無機TableAdapter1 = new scheduling.tasks_databaseDataSet10TableAdapters.Method無機TableAdapter();
-            this.dataGridView_check_wu = new System.Windows.Forms.DataGridView();
-            this.授權人員DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.w201DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w203DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w208DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w210DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w223DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w311DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w320DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w330DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w406DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w408DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w410DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w413DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w418DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w419DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w422DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w424DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w427DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w430DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w433DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w434DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w436DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w437DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w448DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w449DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w451DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w455DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w464DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w506DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w510DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w515DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w516DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w517DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w521DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w525DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s280DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s310DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s321DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s322DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s410DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cNS3916DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cNS5090A3089DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r201DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r203DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r205DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r208DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r210DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r212DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r306DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r309DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r314DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.m317DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.m353DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.a102DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.a205DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.a208DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.a216DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.a306DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView_check_yo = new System.Windows.Forms.DataGridView();
-            this.授權人員DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.a705DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s280DataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.s703DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.m711DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.m731DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w219DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w532DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w785DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w801DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.w901DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e202DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e204DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e230DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e237DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e301DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.e401DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.r703DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.數量 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.就緒 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.method有機BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet11 = new scheduling.tasks_databaseDataSet11();
             this.method有機TableAdapter2 = new scheduling.tasks_databaseDataSet11TableAdapters.Method有機TableAdapter();
@@ -162,23 +72,26 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label_getname_yo = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.radioButton_yo = new System.Windows.Forms.RadioButton();
+            this.radioButton_wu = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.method有機BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet7)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_yo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.method有機BindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_wu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_check_wu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_check_yo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.method有機BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_name
@@ -247,38 +160,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox_wu);
-            this.groupBox1.Controls.Add(this.checkBox_yo);
+            this.groupBox1.Controls.Add(this.radioButton_wu);
+            this.groupBox1.Controls.Add(this.radioButton_yo);
             this.groupBox1.Location = new System.Drawing.Point(59, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(165, 37);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
-            // 
-            // checkBox_wu
-            // 
-            this.checkBox_wu.AutoSize = true;
-            this.checkBox_wu.Location = new System.Drawing.Point(85, 18);
-            this.checkBox_wu.Name = "checkBox_wu";
-            this.checkBox_wu.Size = new System.Drawing.Size(59, 19);
-            this.checkBox_wu.TabIndex = 6;
-            this.checkBox_wu.Text = "無機";
-            this.checkBox_wu.UseVisualStyleBackColor = true;
-            this.checkBox_wu.CheckedChanged += new System.EventHandler(this.checkBox_wu_CheckedChanged);
-            // 
-            // checkBox_yo
-            // 
-            this.checkBox_yo.AutoSize = true;
-            this.checkBox_yo.Checked = true;
-            this.checkBox_yo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_yo.Location = new System.Drawing.Point(6, 18);
-            this.checkBox_yo.Name = "checkBox_yo";
-            this.checkBox_yo.Size = new System.Drawing.Size(59, 19);
-            this.checkBox_yo.TabIndex = 6;
-            this.checkBox_yo.Text = "有機";
-            this.checkBox_yo.UseVisualStyleBackColor = true;
-            this.checkBox_yo.CheckStateChanged += new System.EventHandler(this.checkBox_yo_CheckStateChanged);
             // 
             // method有機TableAdapter1
             // 
@@ -313,39 +202,6 @@
             // 
             this.method無機TableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView_yo
-            // 
-            this.dataGridView_yo.AutoGenerateColumns = false;
-            this.dataGridView_yo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_yo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.授權人員DataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn2});
-            this.dataGridView_yo.DataSource = this.method有機BindingSource2;
-            this.dataGridView_yo.Location = new System.Drawing.Point(404, 4);
-            this.dataGridView_yo.Name = "dataGridView_yo";
-            this.dataGridView_yo.RowTemplate.Height = 27;
-            this.dataGridView_yo.Size = new System.Drawing.Size(370, 150);
-            this.dataGridView_yo.TabIndex = 7;
-            // 
-            // 授權人員DataGridViewTextBoxColumn
-            // 
-            this.授權人員DataGridViewTextBoxColumn.DataPropertyName = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn.HeaderText = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn.Name = "授權人員DataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "數量";
-            this.dataGridViewTextBoxColumn2.HeaderText = "數量";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "就緒";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "就緒";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            // 
             // method有機BindingSource2
             // 
             this.method有機BindingSource2.DataMember = "Method有機";
@@ -355,40 +211,6 @@
             // 
             this.tasks_databaseDataSet13.DataSetName = "tasks_databaseDataSet13";
             this.tasks_databaseDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridView_wu
-            // 
-            this.dataGridView_wu.AutoGenerateColumns = false;
-            this.dataGridView_wu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_wu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.授權人員DataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewCheckBoxColumn1});
-            this.dataGridView_wu.DataSource = this.method無機BindingSource2;
-            this.dataGridView_wu.Location = new System.Drawing.Point(404, 4);
-            this.dataGridView_wu.Name = "dataGridView_wu";
-            this.dataGridView_wu.RowTemplate.Height = 27;
-            this.dataGridView_wu.Size = new System.Drawing.Size(370, 150);
-            this.dataGridView_wu.TabIndex = 7;
-            this.dataGridView_wu.Visible = false;
-            // 
-            // 授權人員DataGridViewTextBoxColumn1
-            // 
-            this.授權人員DataGridViewTextBoxColumn1.DataPropertyName = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn1.HeaderText = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn1.Name = "授權人員DataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "數量";
-            this.dataGridViewTextBoxColumn1.HeaderText = "數量";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "就緒";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "就緒";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // method無機BindingSource2
             // 
@@ -557,577 +379,6 @@
             // 
             this.method無機TableAdapter1.ClearBeforeFill = true;
             // 
-            // dataGridView_check_wu
-            // 
-            this.dataGridView_check_wu.AutoGenerateColumns = false;
-            this.dataGridView_check_wu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_check_wu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.授權人員DataGridViewTextBoxColumn2,
-            this.w201DataGridViewCheckBoxColumn,
-            this.w203DataGridViewCheckBoxColumn,
-            this.w208DataGridViewCheckBoxColumn,
-            this.w210DataGridViewCheckBoxColumn,
-            this.w223DataGridViewCheckBoxColumn,
-            this.w311DataGridViewCheckBoxColumn,
-            this.w320DataGridViewCheckBoxColumn,
-            this.w330DataGridViewCheckBoxColumn,
-            this.w406DataGridViewCheckBoxColumn,
-            this.w408DataGridViewCheckBoxColumn,
-            this.w410DataGridViewCheckBoxColumn,
-            this.w413DataGridViewCheckBoxColumn,
-            this.w418DataGridViewCheckBoxColumn,
-            this.w419DataGridViewCheckBoxColumn,
-            this.w422DataGridViewCheckBoxColumn,
-            this.w424DataGridViewCheckBoxColumn,
-            this.w427DataGridViewCheckBoxColumn,
-            this.w430DataGridViewCheckBoxColumn,
-            this.w433DataGridViewCheckBoxColumn,
-            this.w434DataGridViewCheckBoxColumn,
-            this.w436DataGridViewCheckBoxColumn,
-            this.w437DataGridViewCheckBoxColumn,
-            this.w448DataGridViewCheckBoxColumn,
-            this.w449DataGridViewCheckBoxColumn,
-            this.w451DataGridViewCheckBoxColumn,
-            this.w455DataGridViewCheckBoxColumn,
-            this.w464DataGridViewCheckBoxColumn,
-            this.w506DataGridViewCheckBoxColumn,
-            this.w510DataGridViewCheckBoxColumn,
-            this.w515DataGridViewCheckBoxColumn,
-            this.w516DataGridViewCheckBoxColumn,
-            this.w517DataGridViewCheckBoxColumn,
-            this.w521DataGridViewCheckBoxColumn,
-            this.w525DataGridViewCheckBoxColumn,
-            this.s280DataGridViewCheckBoxColumn,
-            this.s310DataGridViewCheckBoxColumn,
-            this.s321DataGridViewCheckBoxColumn,
-            this.s322DataGridViewCheckBoxColumn,
-            this.s410DataGridViewCheckBoxColumn,
-            this.cNS3916DataGridViewCheckBoxColumn,
-            this.cNS5090A3089DataGridViewCheckBoxColumn,
-            this.r201DataGridViewCheckBoxColumn,
-            this.r203DataGridViewCheckBoxColumn,
-            this.r205DataGridViewCheckBoxColumn,
-            this.r208DataGridViewCheckBoxColumn,
-            this.r210DataGridViewCheckBoxColumn,
-            this.r212DataGridViewCheckBoxColumn,
-            this.r306DataGridViewCheckBoxColumn,
-            this.r309DataGridViewCheckBoxColumn,
-            this.r314DataGridViewCheckBoxColumn,
-            this.m317DataGridViewCheckBoxColumn,
-            this.m353DataGridViewCheckBoxColumn,
-            this.a102DataGridViewCheckBoxColumn,
-            this.a205DataGridViewCheckBoxColumn,
-            this.a208DataGridViewCheckBoxColumn,
-            this.a216DataGridViewCheckBoxColumn,
-            this.a306DataGridViewCheckBoxColumn});
-            this.dataGridView_check_wu.DataSource = this.method無機BindingSource2;
-            this.dataGridView_check_wu.Location = new System.Drawing.Point(21, 208);
-            this.dataGridView_check_wu.Name = "dataGridView_check_wu";
-            this.dataGridView_check_wu.RowTemplate.Height = 27;
-            this.dataGridView_check_wu.Size = new System.Drawing.Size(753, 230);
-            this.dataGridView_check_wu.TabIndex = 15;
-            this.dataGridView_check_wu.Visible = false;
-            // 
-            // 授權人員DataGridViewTextBoxColumn2
-            // 
-            this.授權人員DataGridViewTextBoxColumn2.DataPropertyName = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn2.HeaderText = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn2.Name = "授權人員DataGridViewTextBoxColumn2";
-            // 
-            // w201DataGridViewCheckBoxColumn
-            // 
-            this.w201DataGridViewCheckBoxColumn.DataPropertyName = "W201";
-            this.w201DataGridViewCheckBoxColumn.HeaderText = "W201";
-            this.w201DataGridViewCheckBoxColumn.Name = "w201DataGridViewCheckBoxColumn";
-            // 
-            // w203DataGridViewCheckBoxColumn
-            // 
-            this.w203DataGridViewCheckBoxColumn.DataPropertyName = "W203";
-            this.w203DataGridViewCheckBoxColumn.HeaderText = "W203";
-            this.w203DataGridViewCheckBoxColumn.Name = "w203DataGridViewCheckBoxColumn";
-            // 
-            // w208DataGridViewCheckBoxColumn
-            // 
-            this.w208DataGridViewCheckBoxColumn.DataPropertyName = "W208";
-            this.w208DataGridViewCheckBoxColumn.HeaderText = "W208";
-            this.w208DataGridViewCheckBoxColumn.Name = "w208DataGridViewCheckBoxColumn";
-            // 
-            // w210DataGridViewCheckBoxColumn
-            // 
-            this.w210DataGridViewCheckBoxColumn.DataPropertyName = "W210";
-            this.w210DataGridViewCheckBoxColumn.HeaderText = "W210";
-            this.w210DataGridViewCheckBoxColumn.Name = "w210DataGridViewCheckBoxColumn";
-            // 
-            // w223DataGridViewCheckBoxColumn
-            // 
-            this.w223DataGridViewCheckBoxColumn.DataPropertyName = "W223";
-            this.w223DataGridViewCheckBoxColumn.HeaderText = "W223";
-            this.w223DataGridViewCheckBoxColumn.Name = "w223DataGridViewCheckBoxColumn";
-            // 
-            // w311DataGridViewCheckBoxColumn
-            // 
-            this.w311DataGridViewCheckBoxColumn.DataPropertyName = "W311";
-            this.w311DataGridViewCheckBoxColumn.HeaderText = "W311";
-            this.w311DataGridViewCheckBoxColumn.Name = "w311DataGridViewCheckBoxColumn";
-            // 
-            // w320DataGridViewCheckBoxColumn
-            // 
-            this.w320DataGridViewCheckBoxColumn.DataPropertyName = "W320";
-            this.w320DataGridViewCheckBoxColumn.HeaderText = "W320";
-            this.w320DataGridViewCheckBoxColumn.Name = "w320DataGridViewCheckBoxColumn";
-            // 
-            // w330DataGridViewCheckBoxColumn
-            // 
-            this.w330DataGridViewCheckBoxColumn.DataPropertyName = "W330";
-            this.w330DataGridViewCheckBoxColumn.HeaderText = "W330";
-            this.w330DataGridViewCheckBoxColumn.Name = "w330DataGridViewCheckBoxColumn";
-            // 
-            // w406DataGridViewCheckBoxColumn
-            // 
-            this.w406DataGridViewCheckBoxColumn.DataPropertyName = "W406";
-            this.w406DataGridViewCheckBoxColumn.HeaderText = "W406";
-            this.w406DataGridViewCheckBoxColumn.Name = "w406DataGridViewCheckBoxColumn";
-            // 
-            // w408DataGridViewCheckBoxColumn
-            // 
-            this.w408DataGridViewCheckBoxColumn.DataPropertyName = "W408";
-            this.w408DataGridViewCheckBoxColumn.HeaderText = "W408";
-            this.w408DataGridViewCheckBoxColumn.Name = "w408DataGridViewCheckBoxColumn";
-            // 
-            // w410DataGridViewCheckBoxColumn
-            // 
-            this.w410DataGridViewCheckBoxColumn.DataPropertyName = "W410";
-            this.w410DataGridViewCheckBoxColumn.HeaderText = "W410";
-            this.w410DataGridViewCheckBoxColumn.Name = "w410DataGridViewCheckBoxColumn";
-            // 
-            // w413DataGridViewCheckBoxColumn
-            // 
-            this.w413DataGridViewCheckBoxColumn.DataPropertyName = "W413";
-            this.w413DataGridViewCheckBoxColumn.HeaderText = "W413";
-            this.w413DataGridViewCheckBoxColumn.Name = "w413DataGridViewCheckBoxColumn";
-            // 
-            // w418DataGridViewCheckBoxColumn
-            // 
-            this.w418DataGridViewCheckBoxColumn.DataPropertyName = "W418";
-            this.w418DataGridViewCheckBoxColumn.HeaderText = "W418";
-            this.w418DataGridViewCheckBoxColumn.Name = "w418DataGridViewCheckBoxColumn";
-            // 
-            // w419DataGridViewCheckBoxColumn
-            // 
-            this.w419DataGridViewCheckBoxColumn.DataPropertyName = "W419";
-            this.w419DataGridViewCheckBoxColumn.HeaderText = "W419";
-            this.w419DataGridViewCheckBoxColumn.Name = "w419DataGridViewCheckBoxColumn";
-            // 
-            // w422DataGridViewCheckBoxColumn
-            // 
-            this.w422DataGridViewCheckBoxColumn.DataPropertyName = "W422";
-            this.w422DataGridViewCheckBoxColumn.HeaderText = "W422";
-            this.w422DataGridViewCheckBoxColumn.Name = "w422DataGridViewCheckBoxColumn";
-            // 
-            // w424DataGridViewCheckBoxColumn
-            // 
-            this.w424DataGridViewCheckBoxColumn.DataPropertyName = "W424";
-            this.w424DataGridViewCheckBoxColumn.HeaderText = "W424";
-            this.w424DataGridViewCheckBoxColumn.Name = "w424DataGridViewCheckBoxColumn";
-            // 
-            // w427DataGridViewCheckBoxColumn
-            // 
-            this.w427DataGridViewCheckBoxColumn.DataPropertyName = "W427";
-            this.w427DataGridViewCheckBoxColumn.HeaderText = "W427";
-            this.w427DataGridViewCheckBoxColumn.Name = "w427DataGridViewCheckBoxColumn";
-            // 
-            // w430DataGridViewCheckBoxColumn
-            // 
-            this.w430DataGridViewCheckBoxColumn.DataPropertyName = "W430";
-            this.w430DataGridViewCheckBoxColumn.HeaderText = "W430";
-            this.w430DataGridViewCheckBoxColumn.Name = "w430DataGridViewCheckBoxColumn";
-            // 
-            // w433DataGridViewCheckBoxColumn
-            // 
-            this.w433DataGridViewCheckBoxColumn.DataPropertyName = "W433";
-            this.w433DataGridViewCheckBoxColumn.HeaderText = "W433";
-            this.w433DataGridViewCheckBoxColumn.Name = "w433DataGridViewCheckBoxColumn";
-            // 
-            // w434DataGridViewCheckBoxColumn
-            // 
-            this.w434DataGridViewCheckBoxColumn.DataPropertyName = "W434";
-            this.w434DataGridViewCheckBoxColumn.HeaderText = "W434";
-            this.w434DataGridViewCheckBoxColumn.Name = "w434DataGridViewCheckBoxColumn";
-            // 
-            // w436DataGridViewCheckBoxColumn
-            // 
-            this.w436DataGridViewCheckBoxColumn.DataPropertyName = "W436";
-            this.w436DataGridViewCheckBoxColumn.HeaderText = "W436";
-            this.w436DataGridViewCheckBoxColumn.Name = "w436DataGridViewCheckBoxColumn";
-            // 
-            // w437DataGridViewCheckBoxColumn
-            // 
-            this.w437DataGridViewCheckBoxColumn.DataPropertyName = "W437";
-            this.w437DataGridViewCheckBoxColumn.HeaderText = "W437";
-            this.w437DataGridViewCheckBoxColumn.Name = "w437DataGridViewCheckBoxColumn";
-            // 
-            // w448DataGridViewCheckBoxColumn
-            // 
-            this.w448DataGridViewCheckBoxColumn.DataPropertyName = "W448";
-            this.w448DataGridViewCheckBoxColumn.HeaderText = "W448";
-            this.w448DataGridViewCheckBoxColumn.Name = "w448DataGridViewCheckBoxColumn";
-            // 
-            // w449DataGridViewCheckBoxColumn
-            // 
-            this.w449DataGridViewCheckBoxColumn.DataPropertyName = "W449";
-            this.w449DataGridViewCheckBoxColumn.HeaderText = "W449";
-            this.w449DataGridViewCheckBoxColumn.Name = "w449DataGridViewCheckBoxColumn";
-            // 
-            // w451DataGridViewCheckBoxColumn
-            // 
-            this.w451DataGridViewCheckBoxColumn.DataPropertyName = "W451";
-            this.w451DataGridViewCheckBoxColumn.HeaderText = "W451";
-            this.w451DataGridViewCheckBoxColumn.Name = "w451DataGridViewCheckBoxColumn";
-            // 
-            // w455DataGridViewCheckBoxColumn
-            // 
-            this.w455DataGridViewCheckBoxColumn.DataPropertyName = "W455";
-            this.w455DataGridViewCheckBoxColumn.HeaderText = "W455";
-            this.w455DataGridViewCheckBoxColumn.Name = "w455DataGridViewCheckBoxColumn";
-            // 
-            // w464DataGridViewCheckBoxColumn
-            // 
-            this.w464DataGridViewCheckBoxColumn.DataPropertyName = "W464";
-            this.w464DataGridViewCheckBoxColumn.HeaderText = "W464";
-            this.w464DataGridViewCheckBoxColumn.Name = "w464DataGridViewCheckBoxColumn";
-            // 
-            // w506DataGridViewCheckBoxColumn
-            // 
-            this.w506DataGridViewCheckBoxColumn.DataPropertyName = "W506";
-            this.w506DataGridViewCheckBoxColumn.HeaderText = "W506";
-            this.w506DataGridViewCheckBoxColumn.Name = "w506DataGridViewCheckBoxColumn";
-            // 
-            // w510DataGridViewCheckBoxColumn
-            // 
-            this.w510DataGridViewCheckBoxColumn.DataPropertyName = "W510";
-            this.w510DataGridViewCheckBoxColumn.HeaderText = "W510";
-            this.w510DataGridViewCheckBoxColumn.Name = "w510DataGridViewCheckBoxColumn";
-            // 
-            // w515DataGridViewCheckBoxColumn
-            // 
-            this.w515DataGridViewCheckBoxColumn.DataPropertyName = "W515";
-            this.w515DataGridViewCheckBoxColumn.HeaderText = "W515";
-            this.w515DataGridViewCheckBoxColumn.Name = "w515DataGridViewCheckBoxColumn";
-            // 
-            // w516DataGridViewCheckBoxColumn
-            // 
-            this.w516DataGridViewCheckBoxColumn.DataPropertyName = "W516";
-            this.w516DataGridViewCheckBoxColumn.HeaderText = "W516";
-            this.w516DataGridViewCheckBoxColumn.Name = "w516DataGridViewCheckBoxColumn";
-            // 
-            // w517DataGridViewCheckBoxColumn
-            // 
-            this.w517DataGridViewCheckBoxColumn.DataPropertyName = "W517";
-            this.w517DataGridViewCheckBoxColumn.HeaderText = "W517";
-            this.w517DataGridViewCheckBoxColumn.Name = "w517DataGridViewCheckBoxColumn";
-            // 
-            // w521DataGridViewCheckBoxColumn
-            // 
-            this.w521DataGridViewCheckBoxColumn.DataPropertyName = "W521";
-            this.w521DataGridViewCheckBoxColumn.HeaderText = "W521";
-            this.w521DataGridViewCheckBoxColumn.Name = "w521DataGridViewCheckBoxColumn";
-            // 
-            // w525DataGridViewCheckBoxColumn
-            // 
-            this.w525DataGridViewCheckBoxColumn.DataPropertyName = "W525";
-            this.w525DataGridViewCheckBoxColumn.HeaderText = "W525";
-            this.w525DataGridViewCheckBoxColumn.Name = "w525DataGridViewCheckBoxColumn";
-            // 
-            // s280DataGridViewCheckBoxColumn
-            // 
-            this.s280DataGridViewCheckBoxColumn.DataPropertyName = "S280";
-            this.s280DataGridViewCheckBoxColumn.HeaderText = "S280";
-            this.s280DataGridViewCheckBoxColumn.Name = "s280DataGridViewCheckBoxColumn";
-            // 
-            // s310DataGridViewCheckBoxColumn
-            // 
-            this.s310DataGridViewCheckBoxColumn.DataPropertyName = "S310";
-            this.s310DataGridViewCheckBoxColumn.HeaderText = "S310";
-            this.s310DataGridViewCheckBoxColumn.Name = "s310DataGridViewCheckBoxColumn";
-            // 
-            // s321DataGridViewCheckBoxColumn
-            // 
-            this.s321DataGridViewCheckBoxColumn.DataPropertyName = "S321";
-            this.s321DataGridViewCheckBoxColumn.HeaderText = "S321";
-            this.s321DataGridViewCheckBoxColumn.Name = "s321DataGridViewCheckBoxColumn";
-            // 
-            // s322DataGridViewCheckBoxColumn
-            // 
-            this.s322DataGridViewCheckBoxColumn.DataPropertyName = "S322";
-            this.s322DataGridViewCheckBoxColumn.HeaderText = "S322";
-            this.s322DataGridViewCheckBoxColumn.Name = "s322DataGridViewCheckBoxColumn";
-            // 
-            // s410DataGridViewCheckBoxColumn
-            // 
-            this.s410DataGridViewCheckBoxColumn.DataPropertyName = "S410";
-            this.s410DataGridViewCheckBoxColumn.HeaderText = "S410";
-            this.s410DataGridViewCheckBoxColumn.Name = "s410DataGridViewCheckBoxColumn";
-            // 
-            // cNS3916DataGridViewCheckBoxColumn
-            // 
-            this.cNS3916DataGridViewCheckBoxColumn.DataPropertyName = "CNS 3916";
-            this.cNS3916DataGridViewCheckBoxColumn.HeaderText = "CNS 3916";
-            this.cNS3916DataGridViewCheckBoxColumn.Name = "cNS3916DataGridViewCheckBoxColumn";
-            // 
-            // cNS5090A3089DataGridViewCheckBoxColumn
-            // 
-            this.cNS5090A3089DataGridViewCheckBoxColumn.DataPropertyName = "CNS 5090 A3089";
-            this.cNS5090A3089DataGridViewCheckBoxColumn.HeaderText = "CNS 5090 A3089";
-            this.cNS5090A3089DataGridViewCheckBoxColumn.Name = "cNS5090A3089DataGridViewCheckBoxColumn";
-            // 
-            // r201DataGridViewCheckBoxColumn
-            // 
-            this.r201DataGridViewCheckBoxColumn.DataPropertyName = "R201";
-            this.r201DataGridViewCheckBoxColumn.HeaderText = "R201";
-            this.r201DataGridViewCheckBoxColumn.Name = "r201DataGridViewCheckBoxColumn";
-            // 
-            // r203DataGridViewCheckBoxColumn
-            // 
-            this.r203DataGridViewCheckBoxColumn.DataPropertyName = "R203";
-            this.r203DataGridViewCheckBoxColumn.HeaderText = "R203";
-            this.r203DataGridViewCheckBoxColumn.Name = "r203DataGridViewCheckBoxColumn";
-            // 
-            // r205DataGridViewCheckBoxColumn
-            // 
-            this.r205DataGridViewCheckBoxColumn.DataPropertyName = "R205";
-            this.r205DataGridViewCheckBoxColumn.HeaderText = "R205";
-            this.r205DataGridViewCheckBoxColumn.Name = "r205DataGridViewCheckBoxColumn";
-            // 
-            // r208DataGridViewCheckBoxColumn
-            // 
-            this.r208DataGridViewCheckBoxColumn.DataPropertyName = "R208";
-            this.r208DataGridViewCheckBoxColumn.HeaderText = "R208";
-            this.r208DataGridViewCheckBoxColumn.Name = "r208DataGridViewCheckBoxColumn";
-            // 
-            // r210DataGridViewCheckBoxColumn
-            // 
-            this.r210DataGridViewCheckBoxColumn.DataPropertyName = "R210";
-            this.r210DataGridViewCheckBoxColumn.HeaderText = "R210";
-            this.r210DataGridViewCheckBoxColumn.Name = "r210DataGridViewCheckBoxColumn";
-            // 
-            // r212DataGridViewCheckBoxColumn
-            // 
-            this.r212DataGridViewCheckBoxColumn.DataPropertyName = "R212";
-            this.r212DataGridViewCheckBoxColumn.HeaderText = "R212";
-            this.r212DataGridViewCheckBoxColumn.Name = "r212DataGridViewCheckBoxColumn";
-            // 
-            // r306DataGridViewCheckBoxColumn
-            // 
-            this.r306DataGridViewCheckBoxColumn.DataPropertyName = "R306";
-            this.r306DataGridViewCheckBoxColumn.HeaderText = "R306";
-            this.r306DataGridViewCheckBoxColumn.Name = "r306DataGridViewCheckBoxColumn";
-            // 
-            // r309DataGridViewCheckBoxColumn
-            // 
-            this.r309DataGridViewCheckBoxColumn.DataPropertyName = "R309";
-            this.r309DataGridViewCheckBoxColumn.HeaderText = "R309";
-            this.r309DataGridViewCheckBoxColumn.Name = "r309DataGridViewCheckBoxColumn";
-            // 
-            // r314DataGridViewCheckBoxColumn
-            // 
-            this.r314DataGridViewCheckBoxColumn.DataPropertyName = "R314";
-            this.r314DataGridViewCheckBoxColumn.HeaderText = "R314";
-            this.r314DataGridViewCheckBoxColumn.Name = "r314DataGridViewCheckBoxColumn";
-            // 
-            // m317DataGridViewCheckBoxColumn
-            // 
-            this.m317DataGridViewCheckBoxColumn.DataPropertyName = "M317";
-            this.m317DataGridViewCheckBoxColumn.HeaderText = "M317";
-            this.m317DataGridViewCheckBoxColumn.Name = "m317DataGridViewCheckBoxColumn";
-            // 
-            // m353DataGridViewCheckBoxColumn
-            // 
-            this.m353DataGridViewCheckBoxColumn.DataPropertyName = "M353";
-            this.m353DataGridViewCheckBoxColumn.HeaderText = "M353";
-            this.m353DataGridViewCheckBoxColumn.Name = "m353DataGridViewCheckBoxColumn";
-            // 
-            // a102DataGridViewCheckBoxColumn
-            // 
-            this.a102DataGridViewCheckBoxColumn.DataPropertyName = "A102";
-            this.a102DataGridViewCheckBoxColumn.HeaderText = "A102";
-            this.a102DataGridViewCheckBoxColumn.Name = "a102DataGridViewCheckBoxColumn";
-            // 
-            // a205DataGridViewCheckBoxColumn
-            // 
-            this.a205DataGridViewCheckBoxColumn.DataPropertyName = "A205";
-            this.a205DataGridViewCheckBoxColumn.HeaderText = "A205";
-            this.a205DataGridViewCheckBoxColumn.Name = "a205DataGridViewCheckBoxColumn";
-            // 
-            // a208DataGridViewCheckBoxColumn
-            // 
-            this.a208DataGridViewCheckBoxColumn.DataPropertyName = "A208";
-            this.a208DataGridViewCheckBoxColumn.HeaderText = "A208";
-            this.a208DataGridViewCheckBoxColumn.Name = "a208DataGridViewCheckBoxColumn";
-            // 
-            // a216DataGridViewCheckBoxColumn
-            // 
-            this.a216DataGridViewCheckBoxColumn.DataPropertyName = "A216";
-            this.a216DataGridViewCheckBoxColumn.HeaderText = "A216";
-            this.a216DataGridViewCheckBoxColumn.Name = "a216DataGridViewCheckBoxColumn";
-            // 
-            // a306DataGridViewCheckBoxColumn
-            // 
-            this.a306DataGridViewCheckBoxColumn.DataPropertyName = "A306";
-            this.a306DataGridViewCheckBoxColumn.HeaderText = "A306";
-            this.a306DataGridViewCheckBoxColumn.Name = "a306DataGridViewCheckBoxColumn";
-            // 
-            // dataGridView_check_yo
-            // 
-            this.dataGridView_check_yo.AutoGenerateColumns = false;
-            this.dataGridView_check_yo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_check_yo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.授權人員DataGridViewTextBoxColumn3,
-            this.a705DataGridViewCheckBoxColumn,
-            this.s280DataGridViewCheckBoxColumn1,
-            this.s703DataGridViewCheckBoxColumn,
-            this.m711DataGridViewCheckBoxColumn,
-            this.m731DataGridViewCheckBoxColumn,
-            this.w219DataGridViewCheckBoxColumn,
-            this.w532DataGridViewCheckBoxColumn,
-            this.w785DataGridViewCheckBoxColumn,
-            this.w801DataGridViewCheckBoxColumn,
-            this.w901DataGridViewCheckBoxColumn,
-            this.e202DataGridViewCheckBoxColumn,
-            this.e204DataGridViewCheckBoxColumn,
-            this.e230DataGridViewCheckBoxColumn,
-            this.e237DataGridViewCheckBoxColumn,
-            this.e301DataGridViewCheckBoxColumn,
-            this.e401DataGridViewCheckBoxColumn,
-            this.r703DataGridViewCheckBoxColumn,
-            this.數量,
-            this.就緒});
-            this.dataGridView_check_yo.DataSource = this.method有機BindingSource2;
-            this.dataGridView_check_yo.Location = new System.Drawing.Point(21, 208);
-            this.dataGridView_check_yo.Name = "dataGridView_check_yo";
-            this.dataGridView_check_yo.RowTemplate.Height = 27;
-            this.dataGridView_check_yo.Size = new System.Drawing.Size(753, 230);
-            this.dataGridView_check_yo.TabIndex = 15;
-            // 
-            // 授權人員DataGridViewTextBoxColumn3
-            // 
-            this.授權人員DataGridViewTextBoxColumn3.DataPropertyName = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn3.HeaderText = "授權人員";
-            this.授權人員DataGridViewTextBoxColumn3.Name = "授權人員DataGridViewTextBoxColumn3";
-            // 
-            // a705DataGridViewCheckBoxColumn
-            // 
-            this.a705DataGridViewCheckBoxColumn.DataPropertyName = "A705";
-            this.a705DataGridViewCheckBoxColumn.HeaderText = "A705";
-            this.a705DataGridViewCheckBoxColumn.Name = "a705DataGridViewCheckBoxColumn";
-            // 
-            // s280DataGridViewCheckBoxColumn1
-            // 
-            this.s280DataGridViewCheckBoxColumn1.DataPropertyName = "S280";
-            this.s280DataGridViewCheckBoxColumn1.HeaderText = "S280";
-            this.s280DataGridViewCheckBoxColumn1.Name = "s280DataGridViewCheckBoxColumn1";
-            // 
-            // s703DataGridViewCheckBoxColumn
-            // 
-            this.s703DataGridViewCheckBoxColumn.DataPropertyName = "S703";
-            this.s703DataGridViewCheckBoxColumn.HeaderText = "S703";
-            this.s703DataGridViewCheckBoxColumn.Name = "s703DataGridViewCheckBoxColumn";
-            // 
-            // m711DataGridViewCheckBoxColumn
-            // 
-            this.m711DataGridViewCheckBoxColumn.DataPropertyName = "M711";
-            this.m711DataGridViewCheckBoxColumn.HeaderText = "M711";
-            this.m711DataGridViewCheckBoxColumn.Name = "m711DataGridViewCheckBoxColumn";
-            // 
-            // m731DataGridViewCheckBoxColumn
-            // 
-            this.m731DataGridViewCheckBoxColumn.DataPropertyName = "M731";
-            this.m731DataGridViewCheckBoxColumn.HeaderText = "M731";
-            this.m731DataGridViewCheckBoxColumn.Name = "m731DataGridViewCheckBoxColumn";
-            // 
-            // w219DataGridViewCheckBoxColumn
-            // 
-            this.w219DataGridViewCheckBoxColumn.DataPropertyName = "W219";
-            this.w219DataGridViewCheckBoxColumn.HeaderText = "W219";
-            this.w219DataGridViewCheckBoxColumn.Name = "w219DataGridViewCheckBoxColumn";
-            // 
-            // w532DataGridViewCheckBoxColumn
-            // 
-            this.w532DataGridViewCheckBoxColumn.DataPropertyName = "W532";
-            this.w532DataGridViewCheckBoxColumn.HeaderText = "W532";
-            this.w532DataGridViewCheckBoxColumn.Name = "w532DataGridViewCheckBoxColumn";
-            // 
-            // w785DataGridViewCheckBoxColumn
-            // 
-            this.w785DataGridViewCheckBoxColumn.DataPropertyName = "W785";
-            this.w785DataGridViewCheckBoxColumn.HeaderText = "W785";
-            this.w785DataGridViewCheckBoxColumn.Name = "w785DataGridViewCheckBoxColumn";
-            // 
-            // w801DataGridViewCheckBoxColumn
-            // 
-            this.w801DataGridViewCheckBoxColumn.DataPropertyName = "W801";
-            this.w801DataGridViewCheckBoxColumn.HeaderText = "W801";
-            this.w801DataGridViewCheckBoxColumn.Name = "w801DataGridViewCheckBoxColumn";
-            // 
-            // w901DataGridViewCheckBoxColumn
-            // 
-            this.w901DataGridViewCheckBoxColumn.DataPropertyName = "W901";
-            this.w901DataGridViewCheckBoxColumn.HeaderText = "W901";
-            this.w901DataGridViewCheckBoxColumn.Name = "w901DataGridViewCheckBoxColumn";
-            // 
-            // e202DataGridViewCheckBoxColumn
-            // 
-            this.e202DataGridViewCheckBoxColumn.DataPropertyName = "E202";
-            this.e202DataGridViewCheckBoxColumn.HeaderText = "E202";
-            this.e202DataGridViewCheckBoxColumn.Name = "e202DataGridViewCheckBoxColumn";
-            // 
-            // e204DataGridViewCheckBoxColumn
-            // 
-            this.e204DataGridViewCheckBoxColumn.DataPropertyName = "E204";
-            this.e204DataGridViewCheckBoxColumn.HeaderText = "E204";
-            this.e204DataGridViewCheckBoxColumn.Name = "e204DataGridViewCheckBoxColumn";
-            // 
-            // e230DataGridViewCheckBoxColumn
-            // 
-            this.e230DataGridViewCheckBoxColumn.DataPropertyName = "E230";
-            this.e230DataGridViewCheckBoxColumn.HeaderText = "E230";
-            this.e230DataGridViewCheckBoxColumn.Name = "e230DataGridViewCheckBoxColumn";
-            // 
-            // e237DataGridViewCheckBoxColumn
-            // 
-            this.e237DataGridViewCheckBoxColumn.DataPropertyName = "E237";
-            this.e237DataGridViewCheckBoxColumn.HeaderText = "E237";
-            this.e237DataGridViewCheckBoxColumn.Name = "e237DataGridViewCheckBoxColumn";
-            // 
-            // e301DataGridViewCheckBoxColumn
-            // 
-            this.e301DataGridViewCheckBoxColumn.DataPropertyName = "E301";
-            this.e301DataGridViewCheckBoxColumn.HeaderText = "E301";
-            this.e301DataGridViewCheckBoxColumn.Name = "e301DataGridViewCheckBoxColumn";
-            // 
-            // e401DataGridViewCheckBoxColumn
-            // 
-            this.e401DataGridViewCheckBoxColumn.DataPropertyName = "E401";
-            this.e401DataGridViewCheckBoxColumn.HeaderText = "E401";
-            this.e401DataGridViewCheckBoxColumn.Name = "e401DataGridViewCheckBoxColumn";
-            // 
-            // r703DataGridViewCheckBoxColumn
-            // 
-            this.r703DataGridViewCheckBoxColumn.DataPropertyName = "R703";
-            this.r703DataGridViewCheckBoxColumn.HeaderText = "R703";
-            this.r703DataGridViewCheckBoxColumn.Name = "r703DataGridViewCheckBoxColumn";
-            // 
-            // 數量
-            // 
-            this.數量.DataPropertyName = "數量";
-            this.數量.HeaderText = "數量";
-            this.數量.Name = "數量";
-            // 
-            // 就緒
-            // 
-            this.就緒.DataPropertyName = "就緒";
-            this.就緒.HeaderText = "就緒";
-            this.就緒.Name = "就緒";
-            // 
             // method有機BindingSource1
             // 
             this.method有機BindingSource1.DataMember = "Method有機";
@@ -1209,7 +460,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
-            this.button1.Text = "就緒";
+            this.button1.Text = "強制更改數量";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -1232,11 +483,65 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // radioButton_yo
+            // 
+            this.radioButton_yo.AutoSize = true;
+            this.radioButton_yo.Checked = true;
+            this.radioButton_yo.Location = new System.Drawing.Point(7, 13);
+            this.radioButton_yo.Name = "radioButton_yo";
+            this.radioButton_yo.Size = new System.Drawing.Size(58, 19);
+            this.radioButton_yo.TabIndex = 0;
+            this.radioButton_yo.TabStop = true;
+            this.radioButton_yo.Text = "有機";
+            this.radioButton_yo.UseVisualStyleBackColor = true;
+            this.radioButton_yo.CheckedChanged += new System.EventHandler(this.checkBox_yo_CheckStateChanged);
+            // 
+            // radioButton_wu
+            // 
+            this.radioButton_wu.AutoSize = true;
+            this.radioButton_wu.Location = new System.Drawing.Point(88, 12);
+            this.radioButton_wu.Name = "radioButton_wu";
+            this.radioButton_wu.Size = new System.Drawing.Size(58, 19);
+            this.radioButton_wu.TabIndex = 1;
+            this.radioButton_wu.TabStop = true;
+            this.radioButton_wu.Text = "無機";
+            this.radioButton_wu.UseVisualStyleBackColor = true;
+            this.radioButton_wu.CheckedChanged += new System.EventHandler(this.checkBox_wu_CheckedChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(404, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(370, 151);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(21, 208);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 27;
+            this.dataGridView2.Size = new System.Drawing.Size(753, 230);
+            this.dataGridView2.TabIndex = 20;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(56, 108);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 21;
+            // 
             // Form_method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label_getname_yo);
             this.Controls.Add(this.label_getname_wu);
@@ -1244,8 +549,6 @@
             this.Controls.Add(this.label_yo);
             this.Controls.Add(this.label_wu);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView_check_yo);
-            this.Controls.Add(this.dataGridView_check_wu);
             this.Controls.Add(this.comboBox_me_yo);
             this.Controls.Add(this.button_not_ready);
             this.Controls.Add(this.button1);
@@ -1255,8 +558,6 @@
             this.Controls.Add(this.comboBox_me_wu);
             this.Controls.Add(this.label_method);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView_wu);
-            this.Controls.Add(this.dataGridView_yo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox_yo);
             this.Controls.Add(this.button_add);
@@ -1274,18 +575,16 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_yo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.method有機BindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_wu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.method無機BindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_check_wu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_check_yo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.method有機BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1300,8 +599,6 @@
         private System.Windows.Forms.ComboBox comboBox_yo;
         private System.Windows.Forms.Label label_name2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox_yo;
-        private System.Windows.Forms.CheckBox checkBox_wu;
         private tasks_databaseDataSet6TableAdapters.Method有機TableAdapter method有機TableAdapter1;
         private tasks_databaseDataSet7 tasks_databaseDataSet7;
         private System.Windows.Forms.BindingSource method有機BindingSource;
@@ -1310,8 +607,6 @@
         private tasks_databaseDataSet8 tasks_databaseDataSet8;
         private System.Windows.Forms.BindingSource method無機BindingSource;
         private tasks_databaseDataSet8TableAdapters.Method無機TableAdapter method無機TableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView_yo;
-        private System.Windows.Forms.DataGridView dataGridView_wu;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label_method;
         private System.Windows.Forms.Button button_add_me;
@@ -1322,29 +617,9 @@
         private tasks_databaseDataSet10 tasks_databaseDataSet10;
         private System.Windows.Forms.BindingSource method無機BindingSource1;
         private tasks_databaseDataSet10TableAdapters.Method無機TableAdapter method無機TableAdapter1;
-        private System.Windows.Forms.DataGridView dataGridView_check_wu;
-        private System.Windows.Forms.DataGridView dataGridView_check_yo;
         private tasks_databaseDataSet11 tasks_databaseDataSet11;
         private System.Windows.Forms.BindingSource method有機BindingSource1;
         private tasks_databaseDataSet11TableAdapters.Method有機TableAdapter method有機TableAdapter2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授權人員DataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a705DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s280DataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s703DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn m711DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn m731DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w219DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w532DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w785DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w801DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w901DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e202DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e204DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e230DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e237DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e301DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn e401DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r703DataGridViewCheckBoxColumn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label_wu;
         private System.Windows.Forms.Label label_yo;
@@ -1354,77 +629,16 @@
         private tasks_databaseDataSet14 tasks_databaseDataSet14;
         private System.Windows.Forms.BindingSource method無機BindingSource2;
         private tasks_databaseDataSet14TableAdapters.Method無機TableAdapter method無機TableAdapter2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 就緒;
         private System.Windows.Forms.Button button_not_ready;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授權人員DataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授權人員DataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w201DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w203DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w208DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w210DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w223DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w311DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w320DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w330DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w406DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w408DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w410DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w413DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w418DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w419DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w422DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w424DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w427DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w430DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w433DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w434DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w436DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w437DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w448DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w449DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w451DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w455DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w464DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w506DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w510DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w515DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w516DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w517DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w521DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn w525DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s280DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s310DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s321DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s322DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn s410DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cNS3916DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cNS5090A3089DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r201DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r203DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r205DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r208DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r210DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r212DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r306DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r309DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn r314DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn m317DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn m353DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a102DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a205DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a208DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a216DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn a306DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 授權人員DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.Label label_me;
         private System.Windows.Forms.Label label_getname_wu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label_getname_yo;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RadioButton radioButton_wu;
+        private System.Windows.Forms.RadioButton radioButton_yo;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

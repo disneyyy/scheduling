@@ -113,6 +113,7 @@ namespace scheduling
             {
                 MessageBox.Show(ex.Message);
             }
+            refresh_task();
         }
 
         private void button_time_Click(object sender, EventArgs e)
@@ -264,7 +265,18 @@ namespace scheduling
             {
                 bm.Position = 0;
             }
-            for(int i = 0; i < bm.Count; i++)
+
+            string DB_text = "";
+            if (radioButton_average.Checked)
+            {
+                DB_text = "ORDER BY 累積時間 ASC, 數量 ASC";
+            }
+            else
+            {
+                DB_text = "ORDER BY 累積時間 DESC, 數量 ASC";
+            }
+
+            for (int i = 0; i < bm.Count; i++)
             {
                 try
                 {
@@ -273,7 +285,7 @@ namespace scheduling
                     db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                     db2.Open();
 
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 ORDER BY 累積時間 ASC, 數量 ASC", db);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 " + DB_text, db2);
                     //建立DataSet物件ds
                     DataSet ds2 = new DataSet();
                     //將da物件所取得的資料填入ds物件
@@ -345,6 +357,19 @@ namespace scheduling
             label_class.DataBindings.Clear();
             label_test_obj.DataBindings.Clear();
 
+            SqlConnection db4 = new SqlConnection();
+            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db4.Open();
+            SqlDataAdapter da3 = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 ORDER BY 累積時間 ASC", db4);
+            //建立DataSet物件ds
+            DataSet ds3 = new DataSet();
+            //將da物件所取得的資料填入ds物件
+            da3.Fill(ds3, "Method" + label_class.Text);
+            //dataGridView呈現的資料來源為ds內的第一個DataTable資料表(即Tables[0])
+            //dataGridView2.DataSource = ds.Tables[0];
+            dataGridView3.DataSource = ds3;
+            dataGridView3.DataMember = "Method" + label_class.Text;
+            db4.Close();
         }
     }
 }
