@@ -38,6 +38,8 @@
             this.tasks_databaseDataSet7 = new scheduling.tasks_databaseDataSet7();
             this.label_name2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton_wu = new System.Windows.Forms.RadioButton();
+            this.radioButton_yo = new System.Windows.Forms.RadioButton();
             this.method有機TableAdapter1 = new scheduling.tasks_databaseDataSet6TableAdapters.Method有機TableAdapter();
             this.method有機TableAdapter = new scheduling.tasks_databaseDataSet7TableAdapters.Method有機TableAdapter();
             this.comboBox_wu = new System.Windows.Forms.ComboBox();
@@ -72,8 +74,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label_getname_yo = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.radioButton_yo = new System.Windows.Forms.RadioButton();
-            this.radioButton_wu = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -168,6 +168,31 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
+            // 
+            // radioButton_wu
+            // 
+            this.radioButton_wu.AutoSize = true;
+            this.radioButton_wu.Location = new System.Drawing.Point(88, 12);
+            this.radioButton_wu.Name = "radioButton_wu";
+            this.radioButton_wu.Size = new System.Drawing.Size(58, 19);
+            this.radioButton_wu.TabIndex = 1;
+            this.radioButton_wu.TabStop = true;
+            this.radioButton_wu.Text = "無機";
+            this.radioButton_wu.UseVisualStyleBackColor = true;
+            this.radioButton_wu.CheckedChanged += new System.EventHandler(this.checkBox_wu_CheckedChanged);
+            // 
+            // radioButton_yo
+            // 
+            this.radioButton_yo.AutoSize = true;
+            this.radioButton_yo.Checked = true;
+            this.radioButton_yo.Location = new System.Drawing.Point(7, 13);
+            this.radioButton_yo.Name = "radioButton_yo";
+            this.radioButton_yo.Size = new System.Drawing.Size(58, 19);
+            this.radioButton_yo.TabIndex = 0;
+            this.radioButton_yo.TabStop = true;
+            this.radioButton_yo.Text = "有機";
+            this.radioButton_yo.UseVisualStyleBackColor = true;
+            this.radioButton_yo.CheckedChanged += new System.EventHandler(this.checkBox_yo_CheckStateChanged);
             // 
             // method有機TableAdapter1
             // 
@@ -403,7 +428,7 @@
             // label_wu
             // 
             this.label_wu.AutoSize = true;
-            this.label_wu.Location = new System.Drawing.Point(343, 60);
+            this.label_wu.Location = new System.Drawing.Point(380, 300);
             this.label_wu.Name = "label_wu";
             this.label_wu.Size = new System.Drawing.Size(41, 15);
             this.label_wu.TabIndex = 17;
@@ -412,7 +437,7 @@
             // label_yo
             // 
             this.label_yo.AutoSize = true;
-            this.label_yo.Location = new System.Drawing.Point(343, 90);
+            this.label_yo.Location = new System.Drawing.Point(380, 330);
             this.label_yo.Name = "label_yo";
             this.label_yo.Size = new System.Drawing.Size(41, 15);
             this.label_yo.TabIndex = 17;
@@ -439,7 +464,7 @@
             // label_me
             // 
             this.label_me.AutoSize = true;
-            this.label_me.Location = new System.Drawing.Point(278, 34);
+            this.label_me.Location = new System.Drawing.Point(315, 274);
             this.label_me.Name = "label_me";
             this.label_me.Size = new System.Drawing.Size(41, 15);
             this.label_me.TabIndex = 18;
@@ -448,7 +473,7 @@
             // label_getname_wu
             // 
             this.label_getname_wu.AutoSize = true;
-            this.label_getname_wu.Location = new System.Drawing.Point(183, 90);
+            this.label_getname_wu.Location = new System.Drawing.Point(220, 330);
             this.label_getname_wu.Name = "label_getname_wu";
             this.label_getname_wu.Size = new System.Drawing.Size(41, 15);
             this.label_getname_wu.TabIndex = 18;
@@ -467,7 +492,7 @@
             // label_getname_yo
             // 
             this.label_getname_yo.AutoSize = true;
-            this.label_getname_yo.Location = new System.Drawing.Point(183, 108);
+            this.label_getname_yo.Location = new System.Drawing.Point(220, 348);
             this.label_getname_yo.Name = "label_getname_yo";
             this.label_getname_yo.Size = new System.Drawing.Size(41, 15);
             this.label_getname_yo.TabIndex = 18;
@@ -482,31 +507,6 @@
             this.button3.Text = "reset_time";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // radioButton_yo
-            // 
-            this.radioButton_yo.AutoSize = true;
-            this.radioButton_yo.Checked = true;
-            this.radioButton_yo.Location = new System.Drawing.Point(7, 13);
-            this.radioButton_yo.Name = "radioButton_yo";
-            this.radioButton_yo.Size = new System.Drawing.Size(58, 19);
-            this.radioButton_yo.TabIndex = 0;
-            this.radioButton_yo.TabStop = true;
-            this.radioButton_yo.Text = "有機";
-            this.radioButton_yo.UseVisualStyleBackColor = true;
-            this.radioButton_yo.CheckedChanged += new System.EventHandler(this.checkBox_yo_CheckStateChanged);
-            // 
-            // radioButton_wu
-            // 
-            this.radioButton_wu.AutoSize = true;
-            this.radioButton_wu.Location = new System.Drawing.Point(88, 12);
-            this.radioButton_wu.Name = "radioButton_wu";
-            this.radioButton_wu.Size = new System.Drawing.Size(58, 19);
-            this.radioButton_wu.TabIndex = 1;
-            this.radioButton_wu.TabStop = true;
-            this.radioButton_wu.Text = "無機";
-            this.radioButton_wu.UseVisualStyleBackColor = true;
-            this.radioButton_wu.CheckedChanged += new System.EventHandler(this.checkBox_wu_CheckedChanged);
             // 
             // dataGridView1
             // 

@@ -76,8 +76,15 @@
             this.專案TableAdapter3 = new scheduling.tasks_databaseDataSet15TableAdapters.專案TableAdapter();
             this.button_allo2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton_average = new System.Windows.Forms.RadioButton();
             this.radioButton_efficient = new System.Windows.Forms.RadioButton();
+            this.radioButton_average = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tasks_databaseDataSet16 = new scheduling.tasks_databaseDataSet16();
+            this.專案BindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.專案TableAdapter4 = new scheduling.tasks_databaseDataSet16TableAdapters.專案TableAdapter();
+            this.分析日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -129,12 +138,13 @@
             this.數量DataGridViewTextBoxColumn,
             this.課別DataGridViewTextBoxColumn,
             this.案件負責人DataGridViewTextBoxColumn,
-            this.分析人員});
-            this.dataGridView1.DataSource = this.專案BindingSource2;
+            this.分析人員,
+            this.分析日期});
+            this.dataGridView1.DataSource = this.專案BindingSource3;
             this.dataGridView1.Location = new System.Drawing.Point(-27, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(657, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(1290, 448);
             this.dataGridView1.TabIndex = 6;
             // 
             // 專案編號DataGridViewTextBoxColumn
@@ -258,7 +268,7 @@
             // label_basic_time
             // 
             this.label_basic_time.AutoSize = true;
-            this.label_basic_time.Location = new System.Drawing.Point(1049, 508);
+            this.label_basic_time.Location = new System.Drawing.Point(1075, 251);
             this.label_basic_time.Name = "label_basic_time";
             this.label_basic_time.Size = new System.Drawing.Size(67, 15);
             this.label_basic_time.TabIndex = 5;
@@ -289,7 +299,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(467, 533);
+            this.button3.Location = new System.Drawing.Point(458, 628);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
@@ -310,7 +320,7 @@
             // label_task_id
             // 
             this.label_task_id.AutoSize = true;
-            this.label_task_id.Location = new System.Drawing.Point(691, 632);
+            this.label_task_id.Location = new System.Drawing.Point(976, 292);
             this.label_task_id.Name = "label_task_id";
             this.label_task_id.Size = new System.Drawing.Size(67, 15);
             this.label_task_id.TabIndex = 15;
@@ -319,7 +329,7 @@
             // label_count
             // 
             this.label_count.AutoSize = true;
-            this.label_count.Location = new System.Drawing.Point(783, 649);
+            this.label_count.Location = new System.Drawing.Point(966, 332);
             this.label_count.Name = "label_count";
             this.label_count.Size = new System.Drawing.Size(37, 15);
             this.label_count.TabIndex = 16;
@@ -327,26 +337,28 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(724, 572);
+            this.textBox1.Location = new System.Drawing.Point(1095, 480);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 17;
             this.textBox1.Text = "0";
+            this.textBox1.Visible = false;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(938, 569);
+            this.button4.Location = new System.Drawing.Point(1067, 522);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
             this.button4.Text = "get";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label_method
             // 
             this.label_method.AutoSize = true;
-            this.label_method.Location = new System.Drawing.Point(887, 636);
+            this.label_method.Location = new System.Drawing.Point(1045, 344);
             this.label_method.Name = "label_method";
             this.label_method.Size = new System.Drawing.Size(67, 15);
             this.label_method.TabIndex = 16;
@@ -355,7 +367,7 @@
             // label_class
             // 
             this.label_class.AutoSize = true;
-            this.label_class.Location = new System.Drawing.Point(976, 649);
+            this.label_class.Location = new System.Drawing.Point(987, 373);
             this.label_class.Name = "label_class";
             this.label_class.Size = new System.Drawing.Size(37, 15);
             this.label_class.TabIndex = 16;
@@ -363,12 +375,13 @@
             // 
             // button_allo
             // 
-            this.button_allo.Location = new System.Drawing.Point(1028, 569);
+            this.button_allo.Location = new System.Drawing.Point(1160, 522);
             this.button_allo.Name = "button_allo";
             this.button_allo.Size = new System.Drawing.Size(75, 23);
             this.button_allo.TabIndex = 19;
             this.button_allo.Text = "指派";
             this.button_allo.UseVisualStyleBackColor = true;
+            this.button_allo.Visible = false;
             this.button_allo.Click += new System.EventHandler(this.button_allo_Click);
             // 
             // dataGridView3
@@ -392,7 +405,7 @@
             // label_time
             // 
             this.label_time.AutoSize = true;
-            this.label_time.Location = new System.Drawing.Point(1049, 537);
+            this.label_time.Location = new System.Drawing.Point(1075, 292);
             this.label_time.Name = "label_time";
             this.label_time.Size = new System.Drawing.Size(37, 15);
             this.label_time.TabIndex = 5;
@@ -419,7 +432,7 @@
             // label_test_obj
             // 
             this.label_test_obj.AutoSize = true;
-            this.label_test_obj.Location = new System.Drawing.Point(832, 610);
+            this.label_test_obj.Location = new System.Drawing.Point(976, 251);
             this.label_test_obj.Name = "label_test_obj";
             this.label_test_obj.Size = new System.Drawing.Size(67, 15);
             this.label_test_obj.TabIndex = 16;
@@ -431,11 +444,11 @@
             // 
             // button_allo2
             // 
-            this.button_allo2.Location = new System.Drawing.Point(1119, 569);
+            this.button_allo2.Location = new System.Drawing.Point(539, 628);
             this.button_allo2.Name = "button_allo2";
             this.button_allo2.Size = new System.Drawing.Size(75, 23);
             this.button_allo2.TabIndex = 19;
-            this.button_allo2.Text = "確認";
+            this.button_allo2.Text = "派工";
             this.button_allo2.UseVisualStyleBackColor = true;
             this.button_allo2.Click += new System.EventHandler(this.button_allo3_Click);
             // 
@@ -443,12 +456,23 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton_efficient);
             this.groupBox1.Controls.Add(this.radioButton_average);
-            this.groupBox1.Location = new System.Drawing.Point(694, 452);
+            this.groupBox1.Location = new System.Drawing.Point(458, 522);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "方法";
+            // 
+            // radioButton_efficient
+            // 
+            this.radioButton_efficient.AutoSize = true;
+            this.radioButton_efficient.Location = new System.Drawing.Point(18, 65);
+            this.radioButton_efficient.Name = "radioButton_efficient";
+            this.radioButton_efficient.Size = new System.Drawing.Size(118, 19);
+            this.radioButton_efficient.TabIndex = 1;
+            this.radioButton_efficient.TabStop = true;
+            this.radioButton_efficient.Text = "生產力最大化";
+            this.radioButton_efficient.UseVisualStyleBackColor = true;
             // 
             // radioButton_average
             // 
@@ -462,22 +486,61 @@
             this.radioButton_average.Text = "平均人力";
             this.radioButton_average.UseVisualStyleBackColor = true;
             // 
-            // radioButton_efficient
+            // dateTimePicker1
             // 
-            this.radioButton_efficient.AutoSize = true;
-            this.radioButton_efficient.Location = new System.Drawing.Point(18, 65);
-            this.radioButton_efficient.Name = "radioButton_efficient";
-            this.radioButton_efficient.Size = new System.Drawing.Size(118, 19);
-            this.radioButton_efficient.TabIndex = 1;
-            this.radioButton_efficient.TabStop = true;
-            this.radioButton_efficient.Text = "生產力最大化";
-            this.radioButton_efficient.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(682, 625);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
+            this.dateTimePicker1.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(679, 603);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "今天日期";
+            // 
+            // tasks_databaseDataSet16
+            // 
+            this.tasks_databaseDataSet16.DataSetName = "tasks_databaseDataSet16";
+            this.tasks_databaseDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // 專案BindingSource3
+            // 
+            this.專案BindingSource3.DataMember = "專案";
+            this.專案BindingSource3.DataSource = this.tasks_databaseDataSet16;
+            // 
+            // 專案TableAdapter4
+            // 
+            this.專案TableAdapter4.ClearBeforeFill = true;
+            // 
+            // 分析日期
+            // 
+            this.分析日期.DataPropertyName = "分析日期";
+            this.分析日期.HeaderText = "分析日期";
+            this.分析日期.Name = "分析日期";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(811, 521);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView_time);
             this.Controls.Add(this.dataGridView3);
@@ -493,11 +556,11 @@
             this.Controls.Add(this.button_time);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button_method);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_delete);
             this.Controls.Add(this.textBox_delete);
             this.Controls.Add(this.textBox_refresh);
             this.Controls.Add(this.button_delete);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_worker);
             this.Controls.Add(this.label_last);
             this.Controls.Add(this.label_time);
@@ -519,6 +582,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,6 +640,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton_efficient;
         private System.Windows.Forms.RadioButton radioButton_average;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
+        private tasks_databaseDataSet16 tasks_databaseDataSet16;
+        private System.Windows.Forms.BindingSource 專案BindingSource3;
+        private tasks_databaseDataSet16TableAdapters.專案TableAdapter 專案TableAdapter4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 分析日期;
+        private System.Windows.Forms.Button button1;
     }
 }
 

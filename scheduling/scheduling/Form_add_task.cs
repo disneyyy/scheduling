@@ -43,7 +43,7 @@ namespace scheduling
                     textBox_object.Text + "','" +
                     textBox_method.Text + "'," +
                     textBox_count.Text + ",N'" +
-                    textBox_class.Text + "',N'" +
+                    comboBox_class.Text + "',N'" +
                     textBox_staff.Text +
                     "')";
                 cmd.ExecuteNonQuery();

@@ -49,6 +49,7 @@
             this.測試TableAdapter = new scheduling.tasks_databaseDataSet1TableAdapters.測試TableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_class = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -206,11 +207,24 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker2.TabIndex = 4;
             // 
+            // comboBox_class
+            // 
+            this.comboBox_class.FormattingEnabled = true;
+            this.comboBox_class.Items.AddRange(new object[] {
+            "有機",
+            "無機"});
+            this.comboBox_class.Location = new System.Drawing.Point(272, 109);
+            this.comboBox_class.Name = "comboBox_class";
+            this.comboBox_class.Size = new System.Drawing.Size(100, 23);
+            this.comboBox_class.TabIndex = 5;
+            this.comboBox_class.Text = "有機";
+            // 
             // Form_add_task
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_class);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button_yes);
@@ -260,5 +274,6 @@
         private tasks_databaseDataSet1TableAdapters.測試TableAdapter 測試TableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ComboBox comboBox_class;
     }
 }

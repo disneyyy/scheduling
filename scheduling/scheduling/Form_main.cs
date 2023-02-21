@@ -15,6 +15,7 @@ namespace scheduling
     public partial class Form_main : Form
     {
         public string date_test;
+        public string refresh_string = "SELECT * FROM 專案 ORDER BY 委託單報告日期, 專案編號, 檢測項目 ASC";
         public Form_main()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace scheduling
             db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
             //建立DataAdapter物件da
             //da帶入查詢的SQL語法為toolStripTextBox1文字方塊的內容
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
+            SqlDataAdapter da = new SqlDataAdapter(refresh_string, db);
             //建立DataSet物件ds
             DataSet ds = new DataSet();
             //將da物件所取得的資料填入ds物件
@@ -46,6 +47,8 @@ namespace scheduling
         }
         private void Form_main_Load(object sender, EventArgs e)
         {
+            // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet16.專案' 資料表。您可以視需要進行移動或移除。
+            this.專案TableAdapter4.Fill(this.tasks_databaseDataSet16.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet15.專案' 資料表。您可以視需要進行移動或移除。
             this.專案TableAdapter3.Fill(this.tasks_databaseDataSet15.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet9.專案' 資料表。您可以視需要進行移動或移除。
@@ -104,7 +107,9 @@ namespace scheduling
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "UPDATE " + "Method無機" + " SET 累積時間 = 0";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "UPDATE " + "專案" + " SET 分析人員 = '0'";
+                cmd.CommandText = "UPDATE " + "專案" + " SET 分析人員 = NULL";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "UPDATE " + "專案" + " SET 分析日期 = NULL";
                 cmd.ExecuteNonQuery();
                 db.Close();
                 
@@ -226,8 +231,10 @@ namespace scheduling
                     cmd.Connection = db;
                     cmd.CommandText = "UPDATE Method" + label_class.Text + " SET 累積時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
                     cmd.ExecuteNonQuery();
-                    cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
+                    cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "',分析日期 = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
                     cmd.ExecuteNonQuery();
+                    //cmd.CommandText = "UPDATE 專案 SET 分析日期 = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00.000' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
+                    //cmd.ExecuteNonQuery();
                 }
                 db.Close();
                 refresh_task();
@@ -247,7 +254,7 @@ namespace scheduling
             SqlConnection db = new SqlConnection();
             db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
             DataSet ds = new DataSet();
-            SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
+            SqlDataAdapter daProduct = new SqlDataAdapter(refresh_string, db);
             daProduct.Fill(ds, "專案");
             //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
             label_task_id.DataBindings.Add("Text", ds, "專案.專案編號");
@@ -269,11 +276,11 @@ namespace scheduling
             string DB_text = "";
             if (radioButton_average.Checked)
             {
-                DB_text = "ORDER BY 累積時間 ASC, 數量 ASC";
+                DB_text = "ORDER BY 數量 ASC, 累積時間 ASC";
             }
             else
             {
-                DB_text = "ORDER BY 累積時間 DESC, 數量 ASC";
+                DB_text = "ORDER BY 數量 ASC, 累積時間 DESC";
             }
 
             for (int i = 0; i < bm.Count; i++)
@@ -285,7 +292,7 @@ namespace scheduling
                     db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
                     db2.Open();
 
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 " + DB_text, db2);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 AND 累積時間 < 480 " + DB_text, db2);
                     //建立DataSet物件ds
                     DataSet ds2 = new DataSet();
                     //將da物件所取得的資料填入ds物件
@@ -316,11 +323,7 @@ namespace scheduling
                     //refresh_task();
 
 
-                    label_basic_time.DataBindings.Clear();
-                    label_time.DataBindings.Clear();
-                    label_last.DataBindings.Clear();
-                    label_worker.DataBindings.Clear();
-                    db2.Close();
+                    
 
 
 
@@ -331,17 +334,29 @@ namespace scheduling
                     {
                         int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label_count.Text);
                         int time_last = int.Parse(label_last.Text);
-                        if(time_last < 480)
+                        if(time_last + time_consume <= 600)
                         {
                             time_last += time_consume;
                             SqlCommand cmd = new SqlCommand();
                             cmd.Connection = db3;
                             cmd.CommandText = "UPDATE Method" + label_class.Text + " SET 累積時間 = " + time_last + " WHERE 授權人員 = N'" + label_worker.Text + "'";
                             cmd.ExecuteNonQuery();
-                            cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
+                            cmd.CommandText = "UPDATE 專案 SET 分析人員 = N'" + label_worker.Text + "',分析日期 = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE 專案編號 = '" + label_task_id.Text + "' AND 檢測項目 = N'" + label_test_obj.Text + "'";
                             cmd.ExecuteNonQuery();
                         }
+                        else
+                        {
+                            if(bm_method.Position <= bm_method.Count)
+                            {
+                                bm_method.Position++;
+                            }
+                        }
                     }
+                    label_basic_time.DataBindings.Clear();
+                    label_time.DataBindings.Clear();
+                    label_last.DataBindings.Clear();
+                    label_worker.DataBindings.Clear();
+                    db2.Close();
                     db3.Close();
                     refresh_task();
                 }
@@ -370,6 +385,27 @@ namespace scheduling
             dataGridView3.DataSource = ds3;
             dataGridView3.DataMember = "Method" + label_class.Text;
             db4.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection db = new SqlConnection();
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = db;
+                cmd.CommandText = "UPDATE 專案 SET 分析日期 = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE 專案編號 = '1'";
+                cmd.ExecuteNonQuery();
+                db.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            refresh_task();
         }
     }
 }
