@@ -23,3 +23,4 @@ D:\college\111-2\project\code\scheduling\scheduling\scheduling\obj\Debug\schedul
 D:\college\111-2\project\code\scheduling\scheduling\scheduling\obj\Debug\scheduling.pdb
 D:\college\111-2\project\code\scheduling\scheduling\scheduling\obj\Debug\scheduling.Form_method.resources
 D:\college\111-2\project\code\scheduling\scheduling\scheduling\obj\Debug\scheduling.Form_Time.resources
+D:\college\111-2\project\code\scheduling\scheduling\scheduling\obj\Debug\scheduling.csproj.ResolveComReference.cache

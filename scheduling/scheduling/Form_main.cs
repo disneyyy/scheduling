@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
-
+using Microsoft.Office.Interop.Excel;
+//using iTextSharp.text;
+//using iTextSharp.text.pdf;
 namespace scheduling
 {
     public partial class Form_main : Form
@@ -447,10 +449,69 @@ namespace scheduling
             dataGridView1.DataMember = "專案";
             db4.Close();
         }
+        private void ExportToExcel(DataGridView dataGridView)
+        {
+            
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Worksheet worksheet = (Worksheet)workbook.ActiveSheet;
+
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 1, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            workbook.SaveAs("filename.xlsx");
+            excel.Quit();
+            
+        }
+        private void ExportToPDF(DataGridView dataGridView)
+        {
+            /*
+            //Create a new PDF document
+            Document document = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+
+            //Create a new PDF writer
+            PdfWriter.GetInstance(document, new FileStream("filename.pdf", FileMode.Create));
+
+            //Open the document
+            document.Open();
+
+            //Add a new table to the document with the same number of columns as the DataGridView
+            PdfPTable table = new PdfPTable(dataGridView.Columns.Count);
+
+            //Add the column headers to the table
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                table.AddCell(new Phrase(dataGridView.Columns[i].HeaderText));
+            }
+
+            //Add the data rows to the table
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                {
+                    if (dataGridView[j, i].Value != null)
+                    {
+                        table.AddCell(new Phrase(dataGridView[j, i].Value.ToString()));
+                    }
+                }
+            }
+
+            //Add the table to the document
+            document.Add(table);
+
+            //Close the document
+            document.Close();
+            */
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ExportToExcel(dataGridView1);
         }
     }
 }
