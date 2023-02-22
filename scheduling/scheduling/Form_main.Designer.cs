@@ -34,15 +34,8 @@
             this.tasks_databaseDataSet3 = new scheduling.tasks_databaseDataSet3();
             this.測試TableAdapter = new scheduling.tasks_databaseDataSet3TableAdapters.測試TableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.專案編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.採樣日期起DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.委託單報告日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.檢測項目DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.分析方法DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.課別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.案件負責人DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.分析人員 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.專案BindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tasks_databaseDataSet16 = new scheduling.tasks_databaseDataSet16();
             this.專案BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tasks_databaseDataSet15 = new scheduling.tasks_databaseDataSet15();
             this.專案BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -80,14 +73,14 @@
             this.radioButton_average = new System.Windows.Forms.RadioButton();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.tasks_databaseDataSet16 = new scheduling.tasks_databaseDataSet16();
-            this.專案BindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.專案TableAdapter4 = new scheduling.tasks_databaseDataSet16TableAdapters.專案TableAdapter();
-            this.分析日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.label_anal_date = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).BeginInit();
@@ -97,8 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_task
@@ -127,79 +118,22 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.專案編號DataGridViewTextBoxColumn,
-            this.採樣日期起DataGridViewTextBoxColumn,
-            this.委託單報告日期DataGridViewTextBoxColumn,
-            this.檢測項目DataGridViewTextBoxColumn,
-            this.分析方法DataGridViewTextBoxColumn,
-            this.數量DataGridViewTextBoxColumn,
-            this.課別DataGridViewTextBoxColumn,
-            this.案件負責人DataGridViewTextBoxColumn,
-            this.分析人員,
-            this.分析日期});
-            this.dataGridView1.DataSource = this.專案BindingSource3;
             this.dataGridView1.Location = new System.Drawing.Point(-27, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(1290, 448);
             this.dataGridView1.TabIndex = 6;
             // 
-            // 專案編號DataGridViewTextBoxColumn
+            // 專案BindingSource3
             // 
-            this.專案編號DataGridViewTextBoxColumn.DataPropertyName = "專案編號";
-            this.專案編號DataGridViewTextBoxColumn.HeaderText = "專案編號";
-            this.專案編號DataGridViewTextBoxColumn.Name = "專案編號DataGridViewTextBoxColumn";
+            this.專案BindingSource3.DataMember = "專案";
+            this.專案BindingSource3.DataSource = this.tasks_databaseDataSet16;
             // 
-            // 採樣日期起DataGridViewTextBoxColumn
+            // tasks_databaseDataSet16
             // 
-            this.採樣日期起DataGridViewTextBoxColumn.DataPropertyName = "採樣日期起";
-            this.採樣日期起DataGridViewTextBoxColumn.HeaderText = "採樣日期起";
-            this.採樣日期起DataGridViewTextBoxColumn.Name = "採樣日期起DataGridViewTextBoxColumn";
-            // 
-            // 委託單報告日期DataGridViewTextBoxColumn
-            // 
-            this.委託單報告日期DataGridViewTextBoxColumn.DataPropertyName = "委託單報告日期";
-            this.委託單報告日期DataGridViewTextBoxColumn.HeaderText = "委託單報告日期";
-            this.委託單報告日期DataGridViewTextBoxColumn.Name = "委託單報告日期DataGridViewTextBoxColumn";
-            // 
-            // 檢測項目DataGridViewTextBoxColumn
-            // 
-            this.檢測項目DataGridViewTextBoxColumn.DataPropertyName = "檢測項目";
-            this.檢測項目DataGridViewTextBoxColumn.HeaderText = "檢測項目";
-            this.檢測項目DataGridViewTextBoxColumn.Name = "檢測項目DataGridViewTextBoxColumn";
-            // 
-            // 分析方法DataGridViewTextBoxColumn
-            // 
-            this.分析方法DataGridViewTextBoxColumn.DataPropertyName = "分析方法";
-            this.分析方法DataGridViewTextBoxColumn.HeaderText = "分析方法";
-            this.分析方法DataGridViewTextBoxColumn.Name = "分析方法DataGridViewTextBoxColumn";
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            // 
-            // 課別DataGridViewTextBoxColumn
-            // 
-            this.課別DataGridViewTextBoxColumn.DataPropertyName = "課別";
-            this.課別DataGridViewTextBoxColumn.HeaderText = "課別";
-            this.課別DataGridViewTextBoxColumn.Name = "課別DataGridViewTextBoxColumn";
-            // 
-            // 案件負責人DataGridViewTextBoxColumn
-            // 
-            this.案件負責人DataGridViewTextBoxColumn.DataPropertyName = "案件負責人";
-            this.案件負責人DataGridViewTextBoxColumn.HeaderText = "案件負責人";
-            this.案件負責人DataGridViewTextBoxColumn.Name = "案件負責人DataGridViewTextBoxColumn";
-            // 
-            // 分析人員
-            // 
-            this.分析人員.DataPropertyName = "分析人員";
-            this.分析人員.HeaderText = "分析人員";
-            this.分析人員.Name = "分析人員";
+            this.tasks_databaseDataSet16.DataSetName = "tasks_databaseDataSet16";
+            this.tasks_databaseDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 專案BindingSource2
             // 
@@ -502,25 +436,9 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "今天日期";
             // 
-            // tasks_databaseDataSet16
-            // 
-            this.tasks_databaseDataSet16.DataSetName = "tasks_databaseDataSet16";
-            this.tasks_databaseDataSet16.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // 專案BindingSource3
-            // 
-            this.專案BindingSource3.DataMember = "專案";
-            this.專案BindingSource3.DataSource = this.tasks_databaseDataSet16;
-            // 
             // 專案TableAdapter4
             // 
             this.專案TableAdapter4.ClearBeforeFill = true;
-            // 
-            // 分析日期
-            // 
-            this.分析日期.DataPropertyName = "分析日期";
-            this.分析日期.HeaderText = "分析日期";
-            this.分析日期.Name = "分析日期";
             // 
             // button1
             // 
@@ -532,6 +450,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label_anal_date
+            // 
+            this.label_anal_date.AutoSize = true;
+            this.label_anal_date.Location = new System.Drawing.Point(976, 423);
+            this.label_anal_date.Name = "label_anal_date";
+            this.label_anal_date.Size = new System.Drawing.Size(41, 15);
+            this.label_anal_date.TabIndex = 25;
+            this.label_anal_date.Text = "label2";
             // 
             // Form_main
             // 
@@ -566,12 +493,15 @@
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.label_basic_time);
             this.Controls.Add(this.button_add_task);
+            this.Controls.Add(this.label_anal_date);
             this.Name = "Form_main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource1)).EndInit();
@@ -582,8 +512,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_time)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.專案BindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,14 +537,6 @@
         private tasks_databaseDataSet9 tasks_databaseDataSet9;
         private System.Windows.Forms.BindingSource 專案BindingSource1;
         private tasks_databaseDataSet9TableAdapters.專案TableAdapter 專案TableAdapter2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 專案編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 採樣日期起DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 委託單報告日期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 檢測項目DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 分析方法DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 課別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 案件負責人DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button_time;
         private System.Windows.Forms.Label label_task_id;
@@ -635,7 +555,6 @@
         private tasks_databaseDataSet15 tasks_databaseDataSet15;
         private System.Windows.Forms.BindingSource 專案BindingSource2;
         private tasks_databaseDataSet15TableAdapters.專案TableAdapter 專案TableAdapter3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 分析人員;
         private System.Windows.Forms.Button button_allo2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton_efficient;
@@ -645,8 +564,8 @@
         private tasks_databaseDataSet16 tasks_databaseDataSet16;
         private System.Windows.Forms.BindingSource 專案BindingSource3;
         private tasks_databaseDataSet16TableAdapters.專案TableAdapter 專案TableAdapter4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 分析日期;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_anal_date;
     }
 }
 
