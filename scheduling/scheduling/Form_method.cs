@@ -14,8 +14,6 @@ namespace scheduling
 {
     public partial class Form_method : Form
     {
-        BindingManagerBase bm_yo;
-        BindingManagerBase bm_wu;
         public string selected = "Method有機";
         public Form_method()
         {
@@ -27,11 +25,6 @@ namespace scheduling
             DataSet ds = new DataSet();
             SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
             daProduct.Fill(ds, selected);
-            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
-            label_wu.DataBindings.Add("Text", ds, selected + ".數量");
-            label_getname_wu.DataBindings.Add("Text", ds, selected + ".授權人員");
-            bm_wu = this.BindingContext[ds, selected];
-            bm_wu.Position = bm_wu.Count;
 
             db.Close();
             selected = "Method有機";
@@ -41,10 +34,6 @@ namespace scheduling
             DataSet ds2 = new DataSet();
             SqlDataAdapter daProduct2 = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db2);
             daProduct.Fill(ds2, selected);
-            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
-            label_yo.DataBindings.Add("Text", ds2, selected + ".數量");
-            label_getname_yo.DataBindings.Add("Text", ds2, selected + ".授權人員");
-            bm_yo = this.BindingContext[ds2, selected];
             db2.Close();
             refresh2();
         }
@@ -234,61 +223,48 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                /*
-                if (checkBox_wu.Checked == true)
-                {
-                    
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
-                    daProduct.Fill(ds, selected);
-                    label_me.DataBindings.Clear();
+                BindingManagerBase bm;
+                DataSet ds = new DataSet();
+                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
+                daProduct.Fill(ds, selected);
+                if(radioButton_wu.Checked == true)
                     label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_wu.Text);
-                    if(label_me.Text == "False")
+                else
+                    label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_yo.Text);
+                label_getname.DataBindings.Add("Text", ds, selected + ".授權人員");
+                label_num.DataBindings.Add("Text", ds, selected + ".數量");
+                bm = this.BindingContext[ds, selected];
+                for (int i = 0; i <= bm.Count; i++)
+                {
+                    bm.Position = i;
+                    string temp = comboBox_wu.Text;
+                    if (radioButton_yo.Checked == true) temp = comboBox_yo.Text;
+                    if (label_getname.Text == temp)
                     {
-                        for(bm_wu.Position = 0; bm_wu.Position <= bm_wu.Count; bm_wu.Position++)
-                        {
-                            if(label_getname_wu.Text == comboBox_wu.Text)
-                            {
-                                int temp = int.Parse(label_wu.Text);
-                                temp++;
-                                cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
-                                break;
-                            }
-                        }
+                        break;
                     }
+                }
+                if (label_me.Text == "False")
+                {
+                    int temp = int.Parse(label_num.Text);
+                    temp++;
+                    if(radioButton_wu.Checked == true)
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                     else
-                    {
-                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
-                    }
-                    
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 1, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
                 }
                 else
                 {
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
-                    daProduct.Fill(ds, selected);
-                    label_me.DataBindings.Clear();
-                    label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_yo.Text);
-                    if (label_me.Text == "False")
-                    {
-                        for (bm_yo.Position = 0; bm_yo.Position <= bm_yo.Count; bm_yo.Position++)
-                        {
-                            if (label_getname_yo.Text == comboBox_yo.Text)
-                            {
-                                int temp = int.Parse(label_yo.Text);
-                                temp++;
-                                cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 1, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
-                                break;
-                            }
-                        }
-                    }
+                    if (radioButton_wu.Checked == true)
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                     else
-                    {
                         cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 1 WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
-                    }
-                    
                 }
-                */
+                cmd.ExecuteNonQuery();
+                label_me.DataBindings.Clear();
+                label_getname.DataBindings.Clear();
+                label_num.DataBindings.Clear();
+                /*
                 if (radioButton_wu.Checked == true)
                 {
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 1 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
@@ -298,11 +274,11 @@ namespace scheduling
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 1 WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
                 }
                 cmd.ExecuteNonQuery();
-
+                */
                 
 
                 db.Close();
-                refresh();
+                //refresh();
                 refresh2();
             }
             catch (Exception ex)
@@ -320,61 +296,48 @@ namespace scheduling
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
-                /*
-                if (checkBox_wu.Checked == true)
-                {
-
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
-                    daProduct.Fill(ds, selected);
-                    label_me.DataBindings.Clear();
+                BindingManagerBase bm;
+                DataSet ds = new DataSet();
+                SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
+                daProduct.Fill(ds, selected);
+                if (radioButton_wu.Checked == true)
                     label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_wu.Text);
-                    if (label_me.Text != "False")
+                else
+                    label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_yo.Text);
+                label_getname.DataBindings.Add("Text", ds, selected + ".授權人員");
+                label_num.DataBindings.Add("Text", ds, selected + ".數量");
+                bm = this.BindingContext[ds, selected];
+                for (int i = 0; i <= bm.Count; i++)
+                {
+                    bm.Position = i;
+                    string temp = comboBox_wu.Text;
+                    if(radioButton_yo.Checked == true) temp = comboBox_yo.Text;
+                    if (label_getname.Text == temp)
                     {
-                        for (bm_wu.Position = 0; bm_wu.Position <= bm_wu.Count; bm_wu.Position++)
-                        {
-                            if (label_getname_wu.Text == comboBox_wu.Text)
-                            {
-                                int temp = int.Parse(label_wu.Text);
-                                temp--;
-                                cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
-                                break;
-                            }
-                        }
+                        break;
                     }
+                }
+                if (label_me.Text == "True")
+                {
+                    int temp = int.Parse(label_num.Text);
+                    temp--;
+                    if (radioButton_wu.Checked == true)
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                     else
-                    {
-                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
-                    }
-
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 0, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
                 }
                 else
                 {
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM " + selected + " ORDER BY 數量 ASC", db);
-                    daProduct.Fill(ds, selected);
-                    label_me.DataBindings.Clear();
-                    label_me.DataBindings.Add("Text", ds, selected + "." + comboBox_me_yo.Text);
-                    if (label_me.Text != "False")
-                    {
-                        for (bm_yo.Position = 0; bm_yo.Position <= bm_yo.Count; bm_yo.Position++)
-                        {
-                            if (label_getname_yo.Text == comboBox_yo.Text)
-                            {
-                                int temp = int.Parse(label_yo.Text);
-                                temp--;
-                                cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 0, 數量 = " + temp + " WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
-                                break;
-                            }
-                        }
-                    }
+                    if (radioButton_wu.Checked == true)
+                        cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
                     else
-                    {
                         cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 0 WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
-                    }
-
                 }
-                */
+                cmd.ExecuteNonQuery();
+                label_me.DataBindings.Clear();
+                label_getname.DataBindings.Clear();
+                label_num.DataBindings.Clear();
+                /*
                 if (radioButton_wu.Checked == true)
                 {
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_wu.Text + " = 0 WHERE 授權人員 = N'" + comboBox_wu.Text + "'";
@@ -384,8 +347,9 @@ namespace scheduling
                     cmd.CommandText = "UPDATE " + selected + " SET " + comboBox_me_yo.Text + " = 0 WHERE 授權人員 = N'" + comboBox_yo.Text + "'";
                 }
                 cmd.ExecuteNonQuery();
+                */
                 db.Close();
-                refresh();
+                //refresh();
                 refresh2();
             }
             catch (Exception ex)
@@ -437,7 +401,7 @@ namespace scheduling
                 }
                 cmd.ExecuteNonQuery();
                 db.Close();
-                refresh();
+                //refresh();
                 refresh2();
             }
             catch (Exception ex)
@@ -463,7 +427,7 @@ namespace scheduling
                 }
                 cmd.ExecuteNonQuery();
                 db.Close();
-                refresh();
+                //refresh();
                 refresh2();
             }
             catch (Exception ex)

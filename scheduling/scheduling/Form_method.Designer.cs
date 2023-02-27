@@ -64,15 +64,13 @@
             this.tasks_databaseDataSet11 = new scheduling.tasks_databaseDataSet11();
             this.method有機TableAdapter2 = new scheduling.tasks_databaseDataSet11TableAdapters.Method有機TableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label_wu = new System.Windows.Forms.Label();
-            this.label_yo = new System.Windows.Forms.Label();
+            this.label_num = new System.Windows.Forms.Label();
             this.method有機TableAdapter3 = new scheduling.tasks_databaseDataSet13TableAdapters.Method有機TableAdapter();
             this.method無機TableAdapter2 = new scheduling.tasks_databaseDataSet14TableAdapters.Method無機TableAdapter();
             this.button_not_ready = new System.Windows.Forms.Button();
             this.label_me = new System.Windows.Forms.Label();
-            this.label_getname_wu = new System.Windows.Forms.Label();
+            this.label_getname = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label_getname_yo = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -425,23 +423,14 @@
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 16;
             // 
-            // label_wu
+            // label_num
             // 
-            this.label_wu.AutoSize = true;
-            this.label_wu.Location = new System.Drawing.Point(380, 300);
-            this.label_wu.Name = "label_wu";
-            this.label_wu.Size = new System.Drawing.Size(41, 15);
-            this.label_wu.TabIndex = 17;
-            this.label_wu.Text = "label1";
-            // 
-            // label_yo
-            // 
-            this.label_yo.AutoSize = true;
-            this.label_yo.Location = new System.Drawing.Point(380, 330);
-            this.label_yo.Name = "label_yo";
-            this.label_yo.Size = new System.Drawing.Size(41, 15);
-            this.label_yo.TabIndex = 17;
-            this.label_yo.Text = "label1";
+            this.label_num.AutoSize = true;
+            this.label_num.Location = new System.Drawing.Point(266, 272);
+            this.label_num.Name = "label_num";
+            this.label_num.Size = new System.Drawing.Size(41, 15);
+            this.label_num.TabIndex = 17;
+            this.label_num.Text = "label1";
             // 
             // method有機TableAdapter3
             // 
@@ -464,20 +453,20 @@
             // label_me
             // 
             this.label_me.AutoSize = true;
-            this.label_me.Location = new System.Drawing.Point(315, 274);
+            this.label_me.Location = new System.Drawing.Point(266, 303);
             this.label_me.Name = "label_me";
             this.label_me.Size = new System.Drawing.Size(41, 15);
             this.label_me.TabIndex = 18;
             this.label_me.Text = "label1";
             // 
-            // label_getname_wu
+            // label_getname
             // 
-            this.label_getname_wu.AutoSize = true;
-            this.label_getname_wu.Location = new System.Drawing.Point(220, 330);
-            this.label_getname_wu.Name = "label_getname_wu";
-            this.label_getname_wu.Size = new System.Drawing.Size(41, 15);
-            this.label_getname_wu.TabIndex = 18;
-            this.label_getname_wu.Text = "label1";
+            this.label_getname.AutoSize = true;
+            this.label_getname.Location = new System.Drawing.Point(266, 335);
+            this.label_getname.Name = "label_getname";
+            this.label_getname.Size = new System.Drawing.Size(41, 15);
+            this.label_getname.TabIndex = 18;
+            this.label_getname.Text = "label1";
             // 
             // button1
             // 
@@ -488,15 +477,6 @@
             this.button1.Text = "強制更改數量";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label_getname_yo
-            // 
-            this.label_getname_yo.AutoSize = true;
-            this.label_getname_yo.Location = new System.Drawing.Point(220, 348);
-            this.label_getname_yo.Name = "label_getname_yo";
-            this.label_getname_yo.Size = new System.Drawing.Size(41, 15);
-            this.label_getname_yo.TabIndex = 18;
-            this.label_getname_yo.Text = "label1";
             // 
             // button3
             // 
@@ -543,11 +523,9 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label_getname_yo);
-            this.Controls.Add(this.label_getname_wu);
+            this.Controls.Add(this.label_getname);
             this.Controls.Add(this.label_me);
-            this.Controls.Add(this.label_yo);
-            this.Controls.Add(this.label_wu);
+            this.Controls.Add(this.label_num);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox_me_yo);
             this.Controls.Add(this.button_not_ready);
@@ -621,8 +599,7 @@
         private System.Windows.Forms.BindingSource method有機BindingSource1;
         private tasks_databaseDataSet11TableAdapters.Method有機TableAdapter method有機TableAdapter2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label_wu;
-        private System.Windows.Forms.Label label_yo;
+        private System.Windows.Forms.Label label_num;
         private tasks_databaseDataSet13 tasks_databaseDataSet13;
         private System.Windows.Forms.BindingSource method有機BindingSource2;
         private tasks_databaseDataSet13TableAdapters.Method有機TableAdapter method有機TableAdapter3;
@@ -631,9 +608,8 @@
         private tasks_databaseDataSet14TableAdapters.Method無機TableAdapter method無機TableAdapter2;
         private System.Windows.Forms.Button button_not_ready;
         private System.Windows.Forms.Label label_me;
-        private System.Windows.Forms.Label label_getname_wu;
+        private System.Windows.Forms.Label label_getname;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label_getname_yo;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RadioButton radioButton_wu;
         private System.Windows.Forms.RadioButton radioButton_yo;

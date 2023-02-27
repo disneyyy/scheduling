@@ -449,23 +449,37 @@ namespace scheduling
             dataGridView1.DataMember = "專案";
             db4.Close();
         }
+        int filename_n = 1;
         private void ExportToExcel(DataGridView dataGridView)
         {
-            
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-            Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            Worksheet worksheet = (Worksheet)workbook.ActiveSheet;
-
-            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            saveFileDialog1.FileName = "工作表" + filename_n++;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+                Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                Worksheet worksheet = (Worksheet)workbook.ActiveSheet;
+                worksheet.Cells[1, 1] = "專案編號";
+                worksheet.Cells[1, 2] = "採樣日期起";
+                worksheet.Cells[1, 3] = "委託單報告日期";
+                worksheet.Cells[1, 4] = "檢測項目";
+                worksheet.Cells[1, 5] = "分析方法";
+                worksheet.Cells[1, 6] = "數量";
+                worksheet.Cells[1, 7] = "課別";
+                worksheet.Cells[1, 8] = "案件負責人";
+                worksheet.Cells[1, 9] = "分析人員";
+                worksheet.Cells[1, 10] = "分析日期";
+                worksheet.Cells[1, 11] = "單日累積工時";
+                for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
                 {
-                    worksheet.Cells[i + 1, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
+                    for (int j = 0; j < dataGridView.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
+                    }
                 }
-            }
 
-            workbook.SaveAs("filename.xlsx");
-            excel.Quit();
+                workbook.SaveAs(saveFileDialog1.FileName + ".xlsx");
+                excel.Quit();
+            }
             
         }
         private void ExportToPDF(DataGridView dataGridView)
