@@ -403,10 +403,10 @@
             this.radioButton_efficient.AutoSize = true;
             this.radioButton_efficient.Location = new System.Drawing.Point(18, 65);
             this.radioButton_efficient.Name = "radioButton_efficient";
-            this.radioButton_efficient.Size = new System.Drawing.Size(118, 19);
+            this.radioButton_efficient.Size = new System.Drawing.Size(98, 19);
             this.radioButton_efficient.TabIndex = 1;
             this.radioButton_efficient.TabStop = true;
-            this.radioButton_efficient.Text = "生產力最大化";
+            this.radioButton_efficient.Text = "Productivity";
             this.radioButton_efficient.UseVisualStyleBackColor = true;
             // 
             // radioButton_average
@@ -415,11 +415,12 @@
             this.radioButton_average.Checked = true;
             this.radioButton_average.Location = new System.Drawing.Point(18, 40);
             this.radioButton_average.Name = "radioButton_average";
-            this.radioButton_average.Size = new System.Drawing.Size(88, 19);
+            this.radioButton_average.Size = new System.Drawing.Size(102, 19);
             this.radioButton_average.TabIndex = 0;
             this.radioButton_average.TabStop = true;
-            this.radioButton_average.Text = "平均人力";
+            this.radioButton_average.Text = "Line Balance";
             this.radioButton_average.UseVisualStyleBackColor = true;
+            this.radioButton_average.CheckedChanged += new System.EventHandler(this.radioButton_average_CheckedChanged);
             // 
             // dateTimePicker1
             // 

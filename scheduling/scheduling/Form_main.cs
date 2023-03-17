@@ -527,5 +527,10 @@ namespace scheduling
         {
             ExportToExcel(dataGridView1);
         }
+
+        private void radioButton_average_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
