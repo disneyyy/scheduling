@@ -30,7 +30,7 @@ namespace scheduling
             try
             {//,天數,檢測項目/設備名稱,分析方法,數量,課別,案件負責人
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;

@@ -18,6 +18,7 @@ namespace scheduling
     {
         public string date_test;
         public string refresh_string = "SELECT 專案編號,採樣日期起,委託單報告日期,檢測項目,分析方法,數量,課別,案件負責人,分析人員,分析日期,單日累積工時 FROM 專案 ORDER BY case when 分析日期 is null then 1 else 0 end asc, 分析日期 asc, 分析人員 , 單日累積工時, 委託單報告日期, 專案編號, 檢測項目 ASC";
+        public int max_time = 600;
         public Form_main()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace scheduling
             dataGridView1.DataSource = ds.Tables[0];
             */
             SqlConnection db4 = new SqlConnection();
-            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
             db4.Open();
             //SqlDataAdapter da2 = new SqlDataAdapter("SELECT 授權人員 FROM " + selected, db4);
             SqlDataAdapter da4 = new SqlDataAdapter(refresh_string, db4);
@@ -84,7 +85,7 @@ namespace scheduling
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet5.專案' 資料表。您可以視需要進行移動或移除。
             //this.專案TableAdapter1.Fill(this.tasks_databaseDataSet5.專案);
             // TODO: 這行程式碼會將資料載入 'tasks_databaseDataSet3.測試' 資料表。您可以視需要進行移動或移除。
-            this.測試TableAdapter.Fill(this.tasks_databaseDataSet3.測試);
+            //this.測試TableAdapter.Fill(this.tasks_databaseDataSet3.測試);
             refresh_task();
            
         }
@@ -94,7 +95,7 @@ namespace scheduling
             try
             {
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
@@ -126,7 +127,7 @@ namespace scheduling
             try
             {
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
@@ -147,7 +148,7 @@ namespace scheduling
             try
             {
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = db;
@@ -177,11 +178,10 @@ namespace scheduling
         {
             BindingManagerBase bm;
             SqlConnection db = new SqlConnection();
-            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
             DataSet ds = new DataSet();
             SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM 專案 ORDER BY 課別, 委託單報告日期 ASC", db);
             daProduct.Fill(ds, "專案");
-            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.controlbindingscollection(v=vs.110).aspx
             label_task_id.DataBindings.Add("Text", ds, "專案.專案編號");
             label_count.DataBindings.Add("Text", ds, "專案.數量");
             label_method.DataBindings.Add("Text", ds, "專案.分析方法");
@@ -189,8 +189,6 @@ namespace scheduling
             label_test_obj.DataBindings.Add("Text", ds, "專案.檢測項目");
             bm = this.BindingContext[ds, "專案"];
             db.Close();
-            //this 代表 form1 , 使用form1的BindingContext屬性指定bm(BindingManaterBase)物件瀏覽產品資料表
-            //https://msdn.microsoft.com/zh-tw/library/system.windows.forms.bindingmanagerbase(v=vs.110).aspx
             if(int.Parse(textBox1.Text) < bm.Count)
             {
                 bm.Position = int.Parse(textBox1.Text);
@@ -215,7 +213,7 @@ namespace scheduling
             try
             {
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
 
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text +"=1 ORDER BY 累積時間 ASC, 數量 ASC", db);
@@ -266,7 +264,7 @@ namespace scheduling
             try
             {
                 SqlConnection db = new SqlConnection();
-                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                 db.Open();
                 if(label_worker.Text != "0")
                 {
@@ -300,13 +298,15 @@ namespace scheduling
             label_class.DataBindings.Clear();
             label_test_obj.DataBindings.Clear();
             label_anal_date.DataBindings.Clear();
+            label_due_date.DataBindings.Clear();
+            label_fetch_date.DataBindings.Clear();
         }
         private void button_allo3_Click(object sender, EventArgs e)
         {
             reset_work_time();
             BindingManagerBase bm;
             SqlConnection db = new SqlConnection();
-            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
             DataSet ds = new DataSet();
             SqlDataAdapter daProduct = new SqlDataAdapter(refresh_string, db);
             daProduct.Fill(ds, "專案");
@@ -317,6 +317,8 @@ namespace scheduling
             label_class.DataBindings.Add("Text", ds, "專案.課別");
             label_test_obj.DataBindings.Add("Text", ds, "專案.檢測項目");
             label_anal_date.DataBindings.Add("Text", ds, "專案.分析日期");
+            label_due_date.DataBindings.Add("Text", ds, "專案.委託單報告日期");
+            label_fetch_date.DataBindings.Add("Text", ds, "專案.採樣日期起");
             bm = this.BindingContext[ds, "專案"];
             db.Close();
             bm.Position = bm.Count;
@@ -356,10 +358,10 @@ namespace scheduling
                 {
                     bm.Position = i;
                     SqlConnection db2 = new SqlConnection();
-                    db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                    db2.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                     db2.Open();
 
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 AND 累積時間 < 480 " + DB_text, db2);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Method" + label_class.Text + " WHERE 就緒 = 1 AND " + label_method.Text + "=1 AND 累積時間 < "+ "480" + " " + DB_text, db2);
                     //建立DataSet物件ds
                     DataSet ds2 = new DataSet();
                     //將da物件所取得的資料填入ds物件
@@ -395,13 +397,19 @@ namespace scheduling
 
 
                     SqlConnection db3 = new SqlConnection();
-                    db3.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+                    db3.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
                     db3.Open();
                     if (label_worker.Text != "0" && int.Parse(label_basic_time.Text) >= 0)
                     {
                         int time_consume = int.Parse(label_basic_time.Text) + int.Parse(label_time.Text) * int.Parse(label_count.Text);
                         int time_last = int.Parse(label_last.Text);
-                        if(time_last + time_consume <= 600)
+                        //DateTime current_day = DateTime.Parse(label_due_date.Text, CultureInfo.InvariantCulture);
+                        //if (time_last + time_consume <= 600 && DateTime.Compare(dateTimePicker1.Value))
+                        DateTime temp = DateTime.Parse(label_due_date.Text);
+                        DateTime temp2 = DateTime.Parse(label_fetch_date.Text);
+                        int day_compare_value = DateTime.Compare(temp, dateTimePicker1.Value);
+                        int day_compare_value2 = DateTime.Compare(temp2, dateTimePicker1.Value);
+                        if (time_last + time_consume <= max_time && day_compare_value == 1 && day_compare_value2 <= 0)
                         {
                             time_last += time_consume;
                             SqlCommand cmd = new SqlCommand();
@@ -436,7 +444,7 @@ namespace scheduling
             binding_clear();
 
             SqlConnection db4 = new SqlConnection();
-            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\college\111-2\project\code\scheduling\scheduling\scheduling\tasks_database.mdf;Integrated Security=True";
+            db4.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
             db4.Open();
             SqlDataAdapter da3 = new SqlDataAdapter(refresh_string, db4);
             //建立DataSet物件ds
@@ -531,6 +539,45 @@ namespace scheduling
         private void radioButton_average_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BindingManagerBase bm;
+            SqlConnection db = new SqlConnection();
+            db.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|tasks_database.mdf;Integrated Security=True";
+            DataSet ds = new DataSet();
+            SqlDataAdapter daProduct = new SqlDataAdapter(refresh_string, db);
+            daProduct.Fill(ds, "專案");
+            label_due_date.DataBindings.Add("Text", ds, "專案.委託單報告日期");
+            bm = this.BindingContext[ds, "專案"];
+            db.Close();
+            DateTime temp = DateTime.Parse(label_due_date.Text);
+            int value = DateTime.Compare(temp, dateTimePicker1.Value);
+            if (value == 1)
+            {
+                label2.Text = "期限內";
+            }
+            else if (value == 0)
+            {
+                label2.Text = "same";
+            }
+            else
+            {
+                label2.Text = "過期";
+            }
+
+
+
+
+            label_due_date.DataBindings.Clear();
+        }
+
+        private void button_test_Click(object sender, EventArgs e)
+        {
+            Form_excel_test excel_test = new Form_excel_test();
+            excel_test.Show(this);
+            refresh_task();
         }
     }
 }

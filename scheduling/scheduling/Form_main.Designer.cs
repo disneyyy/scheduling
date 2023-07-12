@@ -77,6 +77,11 @@
             this.button_excel = new System.Windows.Forms.Button();
             this.label_anal_date = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label_due_date = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_fetch_date = new System.Windows.Forms.Label();
+            this.button_test = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.測試BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,9 +100,9 @@
             // 
             // button_add_task
             // 
-            this.button_add_task.Location = new System.Drawing.Point(60, 570);
+            this.button_add_task.Location = new System.Drawing.Point(60, 562);
             this.button_add_task.Name = "button_add_task";
-            this.button_add_task.Size = new System.Drawing.Size(89, 23);
+            this.button_add_task.Size = new System.Drawing.Size(89, 31);
             this.button_add_task.TabIndex = 0;
             this.button_add_task.Text = "新增專案";
             this.button_add_task.UseVisualStyleBackColor = true;
@@ -174,7 +179,7 @@
             // 
             this.button_delete.Location = new System.Drawing.Point(339, 599);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.Size = new System.Drawing.Size(75, 28);
             this.button_delete.TabIndex = 7;
             this.button_delete.Text = "刪除";
             this.button_delete.UseVisualStyleBackColor = true;
@@ -220,11 +225,11 @@
             // 
             // button_method
             // 
-            this.button_method.Location = new System.Drawing.Point(60, 599);
+            this.button_method.Location = new System.Drawing.Point(60, 596);
             this.button_method.Name = "button_method";
-            this.button_method.Size = new System.Drawing.Size(89, 23);
+            this.button_method.Size = new System.Drawing.Size(89, 31);
             this.button_method.TabIndex = 11;
-            this.button_method.Text = "方法授權表";
+            this.button_method.Text = "方法授權";
             this.button_method.UseVisualStyleBackColor = true;
             this.button_method.Click += new System.EventHandler(this.button_method_Click);
             // 
@@ -236,7 +241,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(458, 628);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 25);
             this.button3.TabIndex = 12;
             this.button3.Text = "reset";
             this.button3.UseVisualStyleBackColor = true;
@@ -244,9 +249,9 @@
             // 
             // button_time
             // 
-            this.button_time.Location = new System.Drawing.Point(60, 628);
+            this.button_time.Location = new System.Drawing.Point(60, 630);
             this.button_time.Name = "button_time";
-            this.button_time.Size = new System.Drawing.Size(89, 23);
+            this.button_time.Size = new System.Drawing.Size(89, 31);
             this.button_time.TabIndex = 13;
             this.button_time.Text = "理論工時";
             this.button_time.UseVisualStyleBackColor = true;
@@ -381,9 +386,9 @@
             // 
             this.button_allo2.Location = new System.Drawing.Point(539, 628);
             this.button_allo2.Name = "button_allo2";
-            this.button_allo2.Size = new System.Drawing.Size(75, 23);
+            this.button_allo2.Size = new System.Drawing.Size(75, 25);
             this.button_allo2.TabIndex = 19;
-            this.button_allo2.Text = "派工";
+            this.button_allo2.Text = "排程";
             this.button_allo2.UseVisualStyleBackColor = true;
             this.button_allo2.Click += new System.EventHandler(this.button_allo3_Click);
             // 
@@ -444,9 +449,9 @@
             // 
             // button_excel
             // 
-            this.button_excel.Location = new System.Drawing.Point(968, 628);
+            this.button_excel.Location = new System.Drawing.Point(951, 623);
             this.button_excel.Name = "button_excel";
-            this.button_excel.Size = new System.Drawing.Size(75, 23);
+            this.button_excel.Size = new System.Drawing.Size(92, 30);
             this.button_excel.TabIndex = 24;
             this.button_excel.Text = "輸出excel";
             this.button_excel.UseVisualStyleBackColor = true;
@@ -461,11 +466,59 @@
             this.label_anal_date.TabIndex = 25;
             this.label_anal_date.Text = "label2";
             // 
+            // label_due_date
+            // 
+            this.label_due_date.AutoSize = true;
+            this.label_due_date.Location = new System.Drawing.Point(533, 373);
+            this.label_due_date.Name = "label_due_date";
+            this.label_due_date.Size = new System.Drawing.Size(41, 15);
+            this.label_due_date.TabIndex = 26;
+            this.label_due_date.Text = "label2";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(734, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "test_time_compare";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(409, 373);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "label2";
+            // 
+            // label_fetch_date
+            // 
+            this.label_fetch_date.AutoSize = true;
+            this.label_fetch_date.Location = new System.Drawing.Point(555, 373);
+            this.label_fetch_date.Name = "label_fetch_date";
+            this.label_fetch_date.Size = new System.Drawing.Size(41, 15);
+            this.label_fetch_date.TabIndex = 29;
+            this.label_fetch_date.Text = "label2";
+            // 
+            // button_test
+            // 
+            this.button_test.Location = new System.Drawing.Point(188, 481);
+            this.button_test.Name = "button_test";
+            this.button_test.Size = new System.Drawing.Size(75, 23);
+            this.button_test.TabIndex = 30;
+            this.button_test.Text = "test_excel";
+            this.button_test.UseVisualStyleBackColor = true;
+            this.button_test.Click += new System.EventHandler(this.button_test_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button_test);
             this.Controls.Add(this.button_excel);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
@@ -495,6 +548,10 @@
             this.Controls.Add(this.label_basic_time);
             this.Controls.Add(this.button_add_task);
             this.Controls.Add(this.label_anal_date);
+            this.Controls.Add(this.label_due_date);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label_fetch_date);
             this.Name = "Form_main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form_main_Load);
@@ -568,6 +625,11 @@
         private System.Windows.Forms.Button button_excel;
         private System.Windows.Forms.Label label_anal_date;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label_due_date;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_fetch_date;
+        private System.Windows.Forms.Button button_test;
     }
 }
 

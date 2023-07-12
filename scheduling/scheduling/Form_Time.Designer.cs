@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.分析編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.基本工時DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.作業時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tasks_databaseDataSet12 = new scheduling.tasks_databaseDataSet12();
             this.button_add = new System.Windows.Forms.Button();
             this.textBox_method = new System.Windows.Forms.TextBox();
             this.label_method = new System.Windows.Forms.Label();
@@ -39,15 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_edit = new System.Windows.Forms.Button();
-            this.tasks_databaseDataSet12 = new scheduling.tasks_databaseDataSet12();
-            this.timeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timeTableAdapter = new scheduling.tasks_databaseDataSet12TableAdapters.TimeTableAdapter();
-            this.分析編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.基本工時DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.作業時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet12)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -65,11 +65,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(437, 426);
             this.dataGridView1.TabIndex = 0;
             // 
+            // 分析編號DataGridViewTextBoxColumn
+            // 
+            this.分析編號DataGridViewTextBoxColumn.DataPropertyName = "分析編號";
+            this.分析編號DataGridViewTextBoxColumn.HeaderText = "分析編號";
+            this.分析編號DataGridViewTextBoxColumn.Name = "分析編號DataGridViewTextBoxColumn";
+            // 
+            // 基本工時DataGridViewTextBoxColumn
+            // 
+            this.基本工時DataGridViewTextBoxColumn.DataPropertyName = "基本工時";
+            this.基本工時DataGridViewTextBoxColumn.HeaderText = "基本工時";
+            this.基本工時DataGridViewTextBoxColumn.Name = "基本工時DataGridViewTextBoxColumn";
+            // 
+            // 作業時間DataGridViewTextBoxColumn
+            // 
+            this.作業時間DataGridViewTextBoxColumn.DataPropertyName = "作業時間";
+            this.作業時間DataGridViewTextBoxColumn.HeaderText = "作業時間";
+            this.作業時間DataGridViewTextBoxColumn.Name = "作業時間DataGridViewTextBoxColumn";
+            // 
+            // timeBindingSource
+            // 
+            this.timeBindingSource.DataMember = "Time";
+            this.timeBindingSource.DataSource = this.tasks_databaseDataSet12;
+            // 
+            // tasks_databaseDataSet12
+            // 
+            this.tasks_databaseDataSet12.DataSetName = "tasks_databaseDataSet12";
+            this.tasks_databaseDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button_add
             // 
             this.button_add.Location = new System.Drawing.Point(211, 50);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(75, 23);
+            this.button_add.Size = new System.Drawing.Size(75, 25);
             this.button_add.TabIndex = 1;
             this.button_add.Text = "新增";
             this.button_add.UseVisualStyleBackColor = true;
@@ -127,7 +155,7 @@
             // 
             this.button_delete.Location = new System.Drawing.Point(211, 100);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.Size = new System.Drawing.Size(75, 25);
             this.button_delete.TabIndex = 1;
             this.button_delete.Text = "刪除";
             this.button_delete.UseVisualStyleBackColor = true;
@@ -137,43 +165,15 @@
             // 
             this.button_edit.Location = new System.Drawing.Point(211, 148);
             this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(75, 23);
+            this.button_edit.Size = new System.Drawing.Size(75, 25);
             this.button_edit.TabIndex = 1;
             this.button_edit.Text = "修改";
             this.button_edit.UseVisualStyleBackColor = true;
             this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
-            // tasks_databaseDataSet12
-            // 
-            this.tasks_databaseDataSet12.DataSetName = "tasks_databaseDataSet12";
-            this.tasks_databaseDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timeBindingSource
-            // 
-            this.timeBindingSource.DataMember = "Time";
-            this.timeBindingSource.DataSource = this.tasks_databaseDataSet12;
-            // 
             // timeTableAdapter
             // 
             this.timeTableAdapter.ClearBeforeFill = true;
-            // 
-            // 分析編號DataGridViewTextBoxColumn
-            // 
-            this.分析編號DataGridViewTextBoxColumn.DataPropertyName = "分析編號";
-            this.分析編號DataGridViewTextBoxColumn.HeaderText = "分析編號";
-            this.分析編號DataGridViewTextBoxColumn.Name = "分析編號DataGridViewTextBoxColumn";
-            // 
-            // 基本工時DataGridViewTextBoxColumn
-            // 
-            this.基本工時DataGridViewTextBoxColumn.DataPropertyName = "基本工時";
-            this.基本工時DataGridViewTextBoxColumn.HeaderText = "基本工時";
-            this.基本工時DataGridViewTextBoxColumn.Name = "基本工時DataGridViewTextBoxColumn";
-            // 
-            // 作業時間DataGridViewTextBoxColumn
-            // 
-            this.作業時間DataGridViewTextBoxColumn.DataPropertyName = "作業時間";
-            this.作業時間DataGridViewTextBoxColumn.HeaderText = "作業時間";
-            this.作業時間DataGridViewTextBoxColumn.Name = "作業時間DataGridViewTextBoxColumn";
             // 
             // Form_Time
             // 
@@ -194,8 +194,8 @@
             this.Text = "Form_Time";
             this.Load += new System.EventHandler(this.Form_Time_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tasks_databaseDataSet12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

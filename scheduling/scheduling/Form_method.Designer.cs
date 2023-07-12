@@ -112,7 +112,7 @@
             // 
             this.button_add.Location = new System.Drawing.Point(176, 52);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(75, 23);
+            this.button_add.Size = new System.Drawing.Size(95, 30);
             this.button_add.TabIndex = 2;
             this.button_add.Text = "新增員工";
             this.button_add.UseVisualStyleBackColor = true;
@@ -267,9 +267,9 @@
             // 
             // button_add_me
             // 
-            this.button_add_me.Location = new System.Drawing.Point(186, 135);
+            this.button_add_me.Location = new System.Drawing.Point(186, 127);
             this.button_add_me.Name = "button_add_me";
-            this.button_add_me.Size = new System.Drawing.Size(75, 23);
+            this.button_add_me.Size = new System.Drawing.Size(85, 30);
             this.button_add_me.TabIndex = 11;
             this.button_add_me.Text = "新增方法";
             this.button_add_me.UseVisualStyleBackColor = true;
@@ -279,7 +279,7 @@
             // 
             this.button_delete_me.Location = new System.Drawing.Point(186, 164);
             this.button_delete_me.Name = "button_delete_me";
-            this.button_delete_me.Size = new System.Drawing.Size(75, 23);
+            this.button_delete_me.Size = new System.Drawing.Size(85, 30);
             this.button_delete_me.TabIndex = 11;
             this.button_delete_me.Text = "刪除方法";
             this.button_delete_me.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             // 
             this.button_ready.Location = new System.Drawing.Point(309, 135);
             this.button_ready.Name = "button_ready";
-            this.button_ready.Size = new System.Drawing.Size(75, 23);
+            this.button_ready.Size = new System.Drawing.Size(75, 30);
             this.button_ready.TabIndex = 13;
             this.button_ready.Text = "就緒";
             this.button_ready.UseVisualStyleBackColor = true;
@@ -422,6 +422,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 16;
+            this.textBox1.Visible = false;
             // 
             // label_num
             // 
@@ -444,7 +445,7 @@
             // 
             this.button_not_ready.Location = new System.Drawing.Point(309, 163);
             this.button_not_ready.Name = "button_not_ready";
-            this.button_not_ready.Size = new System.Drawing.Size(75, 23);
+            this.button_not_ready.Size = new System.Drawing.Size(75, 30);
             this.button_not_ready.TabIndex = 13;
             this.button_not_ready.Text = "未就緒";
             this.button_not_ready.UseVisualStyleBackColor = true;
@@ -476,6 +477,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "強制更改數量";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button3
@@ -486,6 +488,7 @@
             this.button3.TabIndex = 19;
             this.button3.Text = "reset_time";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
